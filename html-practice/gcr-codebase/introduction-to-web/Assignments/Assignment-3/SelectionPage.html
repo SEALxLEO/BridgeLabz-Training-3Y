@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Selection Page</title>
+</head>
+<body>
+
+    <h2>Select Your Travel Preferences</h2>
+
+    <form action="#">
+        
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+            <option value="usa">United States</option>
+            <option value="india" selected>India</option> <!-- Pre-selected -->
+            <option value="japan">Japan</option>
+        </select>
+        
+        <br><br>
+
+        <!-- State Dropdown -->
+        <label for="state">State/Province:</label>
+        <select id="state" name="state">
+            <option value="california">California</option>
+            <option value="up" selected>Uttar Pradesh</option> <!-- Pre-selected -->
+            <option value="tokyo">Tokyo</option>
+        </select>
+        
+        <br><br>
+
+        <!-- City Dropdown -->
+        <label for="city">City:</label>
+        <select id="city" name="city">
+            <option value="la">Los Angeles</option>
+            <option value="mathura" selected>Mathura</option> <!-- Pre-selected -->
+            <option value="kyoto">Kyoto</option>
+        </select>
+        
+        <br><br>
+
+        <label for="place">Favorite Tourist Place:</label>
+        <select id="place" name="place">
+            <option value="hollywood">Hollywood Sign</option>
+            <option value="prem_mandir" selected>Prem Mandir</option> <!-- Pre-selected -->
+            <option value="mt_fuji">Mount Fuji</option>
+        </select>
+
+    </form>
+
+    <br>
+
+    <p><strong>Summary of choices:</strong> Based on the default selections above, your favorite tourist place is Prem Mandir located in Mathura, Uttar Pradesh, India.</p>
+
+</body>
+</html>

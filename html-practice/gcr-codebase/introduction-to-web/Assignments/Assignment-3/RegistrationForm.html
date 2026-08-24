@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Page setup -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Registration</title>
+</head>
+<body>
+
+    <h2>Register for a Course</h2>
+
+    <!-- Registration form -->
+    <form action="#">
+        
+        <!-- Grouping form fields -->
+        <fieldset>
+            <legend>Student Details</legend>
+            
+            <!-- Name input -->
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            
+            <!-- Email input -->
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            
+            <!-- Course dropdown -->
+            <label for="course">Select a Course:</label>
+            <select id="course" name="course">
+                <option value="frontend">Frontend Development</option>
+                <option value="backend">Backend Development</option>
+                <option value="database">Database Management</option>
+            </select><br><br>
+
+            <!-- Submit button -->
+            <input type="submit" value="Register">
+        </fieldset>
+    </form>
+
+    <br>
+
+    <!-- Schedule Table at the bottom -->
+    <h3>Available Course Schedules</h3>
+    <table border="1">
+        <tr>
+            <th>Day</th>
+            <th>Time</th>
+            <th>Instructor</th>
+        </tr>
+        <tr>
+            <td>Monday</td>
+            <td>10:00 AM - 12:00 PM</td>
+            <td>Dr. Nishant</td>
+        </tr>
+        <tr>
+            <td>Wednesday</td>
+            <td>02:00 PM - 04:00 PM</td>
+            <td>Prof. Ashish</td>
+        </tr>
+    </table>
+
+</body>
+</html>
