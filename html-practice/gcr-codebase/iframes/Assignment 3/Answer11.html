@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information Form</title>
+</head>
+<body>
+    <form action="#" method="post">
+        <label for="studentName">Name:</label><br>
+        <input type="text" id="studentName" name="studentName" required><br><br>
+        
+        <label for="rollNo">Roll Number:</label><br>
+        <input type="text" id="rollNo" name="rollNo" required><br><br>
+        
+        <label for="course">Course:</label><br>
+        <select id="course" name="course" required>
+            <!-- The default option is disabled so it cannot be submitted, but selected so it shows first -->
+            <option value="" disabled selected>Select Course</option>
+            <option value="btech_cs">B.Tech Computer Science</option>
+            <option value="bca">Bachelors in Computer Applications (BCA)</option>
+            <option value="mca">Masters in Computer Applications (MCA)</option>
+        </select><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

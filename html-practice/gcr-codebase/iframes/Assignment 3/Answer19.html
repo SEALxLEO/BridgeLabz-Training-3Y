@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Security Attributes</title>
+</head>
+<body>
+    <h2>Secure Data Entry Form</h2>
+    
+    <!-- The autocomplete="off" attribute prevents the browser from saving or suggesting past inputs -->
+    <form action="#" method="post" autocomplete="off">
+        <label for="accountName">Account Name:</label><br>
+        <input type="text" id="accountName" name="accountName" required><br><br>
+        
+        <label for="secretPin">Secret PIN:</label><br>
+        <input type="password" id="secretPin" name="secretPin" required><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+    
+    <br>
+    
+    <!-- Explanatory note regarding autocomplete security -->
+    <p><strong>Security Note:</strong> Turning off autocomplete can improve security by preventing the web browser from caching and automatically filling in sensitive information (such as banking details, personal identification numbers, or private addresses). This protects user data from being exposed to other people who might use the same device later, which is especially critical on shared or public computers.</p>
+</body>
+</html>

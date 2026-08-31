@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+</head>
+<body>
+    <form action="#" method="post">
+        <label for="cardName">Cardholder Name:</label><br>
+        <input type="text" id="cardName" name="cardName" required><br><br>
+        
+        <label for="cardNumber">Card Number:</label><br>
+        <!-- Using type="text" for card number to avoid browser formatting issues with large numbers -->
+        <input type="text" id="cardNumber" name="cardNumber" required><br><br>
+        
+        <label for="expiry">Expiry Date:</label><br>
+        <input type="month" id="expiry" name="expiry" required><br><br>
+        
+        <label for="cvv">CVV:</label><br>
+        <!-- CVV is kept as text, optionally could use type="password" to hide input -->
+        <input type="text" id="cvv" name="cvv" required><br><br>
+        
+        <input type="submit" value="Pay Now">
+    </form>
+</body>
+</html>

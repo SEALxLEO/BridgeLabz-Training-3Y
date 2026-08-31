@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URI Encoding Demonstration</title>
+</head>
+<body>
+    <p>Click the link below to see URI encoding in action:</p>
+    
+    <!-- 
+      How this makes a valid link:
+      1. The <a> tag creates the clickable text.
+      2. The 'href' attribute contains the destination URL.
+      3. We encode the space as %20.
+      4. We encode the ampersand (&) as %26 so the browser knows it is part of the search term, not a new URL parameter.
+    -->
+
+    <br><br>
+
+    <a href="https://www.google.com/search?q=HTML%20%26%20CSS" target="_blank">Test a real working search on Google</a>
+</body>
+</html>
