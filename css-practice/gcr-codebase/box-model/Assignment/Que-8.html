@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model Exploration</title>
+    <link rel="stylesheet" href="style8.css">
+</head>
+<body>
+    <!-- Center demonstration using Flexbox[cite: 3] -->
+    <main class="container">
+        
+        <h2>The CSS Box Model Layers</h2>
+        
+        <!-- Visually represent layers with short descriptive text[cite: 3] -->
+        <section class="box-diagram">
+            <div class="layer layer-margin">
+                <span class="label">Margin: External spacing</span>
+                
+                <div class="layer layer-border">
+                    <span class="label">Border: The boundary</span>
+                    
+                    <div class="layer layer-padding">
+                        <span class="label">Padding: Internal spacing</span>
+                        
+                        <div class="layer layer-content">
+                            <span class="label">Content: The actual element</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <h2>Box-Sizing Comparison</h2>
+        
+        <!-- Demonstrate default vs border-box[cite: 3] -->
+        <section class="comparison-container">
+            <div class="demo-box box-default">
+                <h3>content-box (Default)</h3>
+                <p>Width grows with padding & border.</p>
+            </div>
+            
+            <div class="demo-box box-border">
+                <h3>border-box</h3>
+                <p>Width includes padding & border.</p>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>

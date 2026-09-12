@@ -1,0 +1,58 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Arrange cards in a single row[cite: 3] */
+.card-container {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+}
+
+/* Base card styling and smooth transition[cite: 3] */
+.card {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+/* Text shadow for depth[cite: 3] */
+.card h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+/* Different box-shadow styles[cite: 3] */
+.card-1 {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.card-2 {
+    box-shadow: 0 8px 16px rgba(52, 152, 219, 0.3); /* Colored shadow */
+}
+
+.card-3 {
+    box-shadow: 6px 6px 0px rgba(44, 62, 80, 0.2); /* Solid offset */
+}
+
+/* Lift up and apply larger shadow on hover[cite: 3] */
+.card:hover {
+    transform: translateY(-12px); 
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15); 
+}

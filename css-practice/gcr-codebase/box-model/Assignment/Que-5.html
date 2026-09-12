@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Selectors</title>
+    <link rel="stylesheet" href="style5.css">
+</head>
+<body>
+    <main class="demo-container">
+        <h2>Advanced CSS Selectors</h2>
+
+        <!-- Combinators demonstration[cite: 3] -->
+        <section class="parent">
+            <p>I am a direct child and a descendant.</p>
+            <div>
+                <p>I am a descendant but not a direct child.</p>
+            </div>
+        </section>
+
+        <h3>Sibling Selectors</h3>
+        <p>I am the adjacent sibling (immediately after h3).</p>
+        <p>I am a general sibling.</p>
+
+        <!-- Pseudo-classes and Attribute selectors demonstration[cite: 3] -->
+        <ul class="item-list">
+            <li><a href="https://example.com">Secure Link (HTTPS)</a></li>
+            <li><a href="http://example.com">Insecure Link (HTTP)</a></li>
+            <li>List Item 3</li>
+            <li>List Item 4</li>
+        </ul>
+
+        <!-- Input for focus and attribute styling[cite: 3] -->
+        <input type="text" placeholder="Click to focus...">
+    </main>
+</body>
+</html>

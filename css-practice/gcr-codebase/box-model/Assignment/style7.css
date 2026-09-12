@@ -1,0 +1,83 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base family and layout */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font family 1[cite: 3] */
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.typography-article {
+    max-width: 700px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Different font families, weights, and sizes[cite: 3] */
+h1 {
+    font-family: 'Georgia', serif; /* Font family 2[cite: 3] */
+    font-size: 2.8rem; 
+    font-weight: 700; 
+    margin-bottom: 5px;
+    text-align: center; /* Alignment[cite: 3] */
+}
+
+/* Letter spacing application[cite: 3] */
+.subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    letter-spacing: 2px; 
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+/* Line height and text align for readability[cite: 3] */
+p {
+    font-size: 1.15rem;
+    line-height: 1.8; 
+    margin-bottom: 20px;
+    text-align: justify; 
+}
+
+/* Custom colors for inline elements[cite: 3] */
+mark {
+    background-color: #f1c40f; 
+    color: #2c3e50; 
+    padding: 2px 4px;
+}
+
+strong {
+    color: #e74c3c; 
+    font-weight: 800; 
+}
+
+em {
+    color: #2980b9; 
+    font-style: italic; 
+}
+
+/* Pseudo-elements for emphasis on first paragraph[cite: 3] */
+p:first-of-type::first-letter {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    float: left; /* Allows text to wrap around the letter */
+    margin-right: 8px;
+    line-height: 0.9;
+}
+
+p:first-of-type::first-line {
+    font-weight: bold;
+    color: #34495e;
+}

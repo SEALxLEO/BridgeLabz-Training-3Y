@@ -1,0 +1,67 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Flexbox horizontal alignment[cite: 3] */
+.transform-container {
+    display: flex;
+    gap: 40px;
+    padding: 20px;
+}
+
+/* Wrapper for box and label[cite: 3] */
+.demo-item {
+    text-align: center;
+}
+
+/* Base box styles and transition[cite: 3] */
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    transition: all 0.4s ease; /* Specified transition[cite: 3] */
+}
+
+/* 
+ * Apply transformations on hover[cite: 3] 
+ */
+
+.box-rotate:hover {
+    transform: rotate(45deg); 
+}
+
+.box-scale:hover {
+    transform: scale(1.2); 
+    background-color: #e74c3c; /* Color change for contrast */
+}
+
+.box-translate:hover {
+    transform: translate(0, -20px); 
+    background-color: #2ecc71;
+}
+
+.box-skew:hover {
+    transform: skew(20deg, 10deg); 
+    background-color: #9b59b6;
+}
+
+/* Label styles[cite: 3] */
+.demo-item p {
+    color: #2c3e50;
+    font-weight: bold;
+    font-size: 0.9rem;
+}

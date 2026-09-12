@@ -1,0 +1,99 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    /* Center demonstration using Flexbox[cite: 3] */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+h2 {
+    color: #2c3e50;
+    text-align: center;
+}
+
+/* Base styles for visual layers[cite: 3] */
+.layer {
+    padding: 25px;
+    text-align: center;
+}
+
+.label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+/* Background colors and outlines to differentiate layers[cite: 3] */
+.layer-margin {
+    background-color: #fdebd0; /* Orange tint for margin */
+    outline: 2px dashed #e67e22; 
+}
+
+.layer-border {
+    background-color: #fcf3cf; /* Yellow tint for border */
+    outline: 4px solid #f1c40f; 
+}
+
+.layer-padding {
+    background-color: #d5f5e3; /* Green tint for padding */
+    outline: 2px dotted #2ecc71; 
+}
+
+.layer-content {
+    background-color: #d6eaf8; /* Blue tint for content */
+    outline: 2px solid #3498db; 
+    padding: 40px 20px; /* Extra padding to represent content height */
+}
+
+/* Box-Sizing Comparison Section[cite: 3] */
+.comparison-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Identical baseline properties for comparison */
+.demo-box {
+    background-color: #ecf0f1;
+    width: 250px; 
+    padding: 20px; 
+    border: 10px solid #34495e; 
+    text-align: center;
+}
+
+.demo-box h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #e74c3c;
+}
+
+/* Default Box Model[cite: 3] */
+.box-default {
+    /* Total width = 250px + 40px padding + 20px border = 310px */
+    box-sizing: content-box; 
+}
+
+/* Border-Box Model[cite: 3] */
+.box-border {
+    /* Total width stays strictly at 250px */
+    box-sizing: border-box; 
+}

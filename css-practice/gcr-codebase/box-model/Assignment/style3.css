@@ -1,0 +1,65 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+}
+
+/* Fixed header at top[cite: 3] */
+.fixed-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1a1a1a;
+    text-align: center;
+    padding: 20px;
+    z-index: 100;
+}
+
+/* Fixed footer at bottom[cite: 3] */
+.fixed-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #1a1a1a;
+    text-align: center;
+    padding: 15px;
+    z-index: 100;
+}
+
+/* Center text in sections */
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+section p {
+    font-size: 1.2rem;
+    max-width: 600px;
+}
+
+/* Linear gradient background[cite: 3] */
+.linear-section {
+    background: linear-gradient(135deg, #3498db, #9b59b6);
+}
+
+/* Radial gradient background with parallax[cite: 3] */
+.radial-section {
+    background: radial-gradient(circle, #e74c3c, #f39c12);
+    background-attachment: fixed; /* Parallax effect[cite: 3] */
+}

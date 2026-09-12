@@ -1,0 +1,80 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar container */
+.navbar {
+    background-color: #2c3e50;
+    padding: 10px 20px;
+}
+
+/* Horizontal alignment[cite: 3] */
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px; 
+}
+
+/* Padding, borders, and smooth transition[cite: 3] */
+.nav-links a {
+    text-decoration: none;
+    color: #ecf0f1;
+    padding: 10px 20px; 
+    border: 2px solid transparent; 
+    border-radius: 4px;
+    font-weight: bold;
+    transition: all 0.3s ease; /* Required transition[cite: 3] */
+}
+
+/* Hover effects[cite: 3] */
+.nav-links a:hover {
+    background-color: #34495e;
+    border-color: #3498db; 
+}
+
+/* Highlight the active link[cite: 3] */
+.nav-links a.active {
+    background-color: #3498db;
+    border-color: #3498db;
+    color: #ffffff;
+}
+
+.content {
+    flex: 1; /* Pushes footer down */
+    text-align: center;
+    padding: 60px 20px;
+}
+
+/* Simple centered footer[cite: 3] */
+.simple-footer {
+    background-color: #bdc3c7;
+    color: #2c3e50;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Stack vertically below 700px[cite: 3] */
+@media (max-width: 700px) {
+    .nav-links {
+        flex-direction: column; 
+        align-items: center; 
+        gap: 10px;
+    }
+    
+    .nav-links a {
+        width: 100%;
+        text-align: center;
+    }
+}
