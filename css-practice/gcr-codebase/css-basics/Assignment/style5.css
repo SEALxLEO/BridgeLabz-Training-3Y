@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f9fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+
+.pricing-container {
+    display: flex;
+    gap: 30px;
+    align-items: stretch; 
+    max-width: 1000px;
+    width: 100%;
+}
+
+/* 
+ * Requirement: Each plan includes a heading, list of features, price section, and button[cite: 1].
+ */
+.pricing-card {
+    background-color: #ffffff;
+    flex: 1; /* Three equal columns[cite: 1] */
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Allows pushing the button to the bottom */
+    position: relative;
+    /* Requirement: CSS transitions for smooth hover animations[cite: 1] */
+    transition: transform 0.3s ease, background-color 0.3s ease; 
+}
+
+/* 
+ * Requirement: Hover effect that slightly enlarges the box and changes background color[cite: 1].
+ */
+.pricing-card:hover {
+    transform: scale(1.05);
+    background-color: #f8fafc;
+}
+
+.pricing-card h3 {
+    font-size: 1.5rem;
+    color: #334155;
+    margin-bottom: 15px;
+}
+
+.pricing-card .price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0f172a;
+    margin-bottom: 20px;
+}
+
+.features {
+    list-style: none;
+    margin-bottom: 30px;
+    flex-grow: 1; /* Pushes the button to the bottom of the card */
+}
+
+.features li {
+    padding: 10px 0;
+    color: #64748b;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.features li:last-child {
+    border-bottom: none;
+}
+
+/* Styled link button using <a>[cite: 1] */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #e2e8f0;
+    color: #334155;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+    margin-top: auto; /* Aligns button to the bottom */
+}
+
+.btn:hover {
+    background-color: #cbd5e1;
+}
+
+/* 
+ * Requirement: Different border styles or colors to highlight the most popular plan[cite: 1].
+ */
+.popular-plan {
+    border: 2px solid #3b82f6; 
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.15);
+}
+
+/* Ensure the popular plan's background color change on hover is distinct[cite: 1] */
+.popular-plan:hover {
+    background-color: #eff6ff; 
+}
+
+.btn-popular {
+    background-color: #3b82f6;
+    color: #ffffff;
+}
+
+.btn-popular:hover {
+    background-color: #2563eb;
+}
+
+.badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #3b82f6;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+    .pricing-container {
+        flex-direction: column;
+    }
+}

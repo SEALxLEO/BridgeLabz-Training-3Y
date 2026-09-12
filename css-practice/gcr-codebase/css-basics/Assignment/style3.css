@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.card {
+    background-color: #ffffff;
+    flex: 1; /* Ensures all columns take up equal space */
+    padding: 30px 20px; 
+    margin: 10px; 
+    border: 1px solid #e0e0e0; 
+    border-radius: 12px; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05); 
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card h3 {
+    margin-bottom: 5px;
+    color: #333333;
+}
+
+.card .role {
+    font-weight: bold;
+    color: #666666;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.card .description {
+    color: #555555;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.card.team-lead {
+    background-color: #e3f2fd; 
+    border: 2px dashed #1e88e5; 
+    transform: scale(1.05); /* Slight enlargement to emphasize the lead */
+    box-shadow: 0 12px 24px rgba(30, 136, 229, 0.15);
+}
+
+@media (max-width: 600px) {
+    .team-container {
+        flex-direction: column; 
+    }
+    
+    .card.team-lead {
+        transform: scale(1); /* Reset scale on mobile so it fits the screen */
+    }
+}

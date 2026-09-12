@@ -1,0 +1,84 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f4f9;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* 
+ * Requirement: Use grid to display images in multiple columns.
+ * grid-template-columns with auto-fit and minmax ensures the gallery is 
+ * responsive and adjusts the image count per row based on screen width[cite: 1].
+ */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* 
+ * Requirement: Use CSS box-shadow and border-radius to make images 
+ * look clean and modern[cite: 1].
+ * overflow: hidden ensures the scaled image doesn't break out of the rounded corners.
+ */
+.gallery-item {
+    position: relative; 
+    border-radius: 12px; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+    overflow: hidden; 
+    aspect-ratio: 4 / 3; /* Keeps all image containers a uniform shape */
+    background-color: #ddd;
+}
+
+/* 
+ * The transition allows for smooth scaling[cite: 1]. 
+ */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+/* 
+ * Requirement: Show a caption overlay using position: absolute and opacity[cite: 1].
+ */
+.caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.4s ease;
+}
+
+/* 
+ * Requirement: When hovered, the image should slightly scale up[cite: 1].
+ */
+.gallery-item:hover img {
+    transform: scale(1.1); 
+}
+
+/* 
+ * Requirement: When hovered, show the caption overlay[cite: 1].
+ */
+.gallery-item:hover .caption {
+    opacity: 1;
+}

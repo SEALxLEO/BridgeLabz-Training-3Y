@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eef2f3; 
+    color: #333333; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.contact-form {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+.contact-form h2 {
+    margin-bottom: 25px;
+    text-align: center;
+    color: #2c3e50;
+}
+
+.form-group {
+    margin-bottom: 20px; 
+    display: flex;
+    flex-direction: column; /* Ensures labels sit on top of inputs naturally without tables[cite: 1] */
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555555;
+}
+
+
+.form-group input,
+.form-group textarea {
+    padding: 12px 15px; 
+    border: 1px solid #cccccc;
+    border-radius: 6px; 
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: #fafafa;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05); 
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #3498db; 
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.4); /* Extra visual feedback */
+}
+
+/* Styled Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #2980b9;
+}

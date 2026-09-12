@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #e5e5e5;
+    padding: 40px 20px;
+    font-family: "Times New Roman", Times, serif; /* Custom font[cite: 1] */
+}
+
+.newspaper-container {
+    background-color: #ffffff;
+    padding: 30px; /* Main content padding[cite: 1] */
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    
+    /* 3 vertical columns[cite: 1] */
+    column-count: 3;
+    column-gap: 40px;
+    
+    /* Justify text[cite: 1] */
+    text-align: justify;
+}
+
+
+.newspaper-container h2 {
+    column-span: all;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.news-img {
+    float: left;
+    width: 100%;
+    max-width: 180px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 4px;
+}
+
+p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .newspaper-container {
+        column-count: 1; /* Single column on small screens */
+    }
+}

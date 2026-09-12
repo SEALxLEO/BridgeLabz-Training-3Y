@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.article-container {
+    max-width: 800px;
+    background: #ffffff;
+    padding: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-radius: 8px;
+}
+
+header {
+    margin-bottom: 30px;
+    border-bottom: 2px solid #eaeaea;
+    padding-bottom: 15px;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.subheading {
+    font-size: 1.1rem;
+    color: #777;
+    font-style: italic;
+}
+
+/* 
+ * Requirement: Add consistent spacing between paragraphs using margins[cite: 1].
+ */
+p {
+    margin-bottom: 1.8rem; 
+    line-height: 1.8;
+    font-size: 1.15rem;
+}
+
+/* 
+ * Requirement: Style the first letter of each paragraph with a larger font[cite: 1].
+ */
+p::first-letter {
+    font-size: 3.5rem;
+    color: #2c3e50;
+    float: left; /* Allows the rest of the text to wrap around the large letter */
+    margin-right: 8px;
+    line-height: 0.8;
+    font-weight: bold;
+}
+
+/* 
+ * Requirement: Make the first line of each paragraph bold[cite: 1].
+ */
+p::first-line {
+    font-weight: bold;
+}
+
+mark {
+    background-color: #ffeaa7;
+    color: #2d3436;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+blockquote {
+    border-left: 6px solid #0984e3;
+    background-color: #dfe6e9;
+    padding: 20px 25px;
+    margin: 35px 0;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: #2d3436;
+    border-radius: 0 8px 8px 0;
+}

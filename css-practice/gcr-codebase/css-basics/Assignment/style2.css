@@ -1,0 +1,91 @@
+/* Box model reset and basic typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+/* 
+ * Heading variations: Demonstrating different font sizes and weights. 
+ */
+h1 { font-size: 3rem; font-weight: 800; }
+h2 { font-size: 2.5rem; font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); }
+h3 { font-size: 2rem; font-weight: 600; }
+h4 { font-size: 1.75rem; font-weight: 500; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); }
+h5 { font-size: 1.5rem; font-weight: bold; }
+
+section {
+    padding: 120px 20px;
+    margin: 20px 0;
+    border-top: 5px solid #333;
+    border-bottom: 5px solid #333;
+    color: #fff;
+    text-align: center;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section p {
+    max-width: 800px;
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+/* 
+ * Requirement: Parallax-like effect using background-attachment: fixed 
+ * Applied to sections 1 and 3.
+ */
+.section-parallax-1 {
+    background-image: url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+}
+
+.section-parallax-2 {
+    background-image: url('https://images.unsplash.com/photo-1473283147055-e39c51470400');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Requirement: Apply a linear gradient in one section */
+.section-linear {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+}
+
+/* Requirement: Apply a radial gradient in another section */
+.section-radial {
+    background: radial-gradient(circle, #2b5876, #4e4376);
+}
+
+footer {
+    background-color: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 20px;
+}
