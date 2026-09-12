@@ -1,0 +1,55 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    padding: 20px;
+}
+
+/* Layout automatically adjusts to screen size[cite: 2] */
+.photo-gallery {
+    display: grid;
+    /* Grid requirement[cite: 2] */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden; /* Prevents scaled image from breaking layout */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Fills grid cell completely[cite: 2] */
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; 
+    /* Smooth zoom effect[cite: 2] */
+    transition: transform 0.5s ease; 
+}
+
+/* Scale up slightly on hover[cite: 2] */
+.gallery-item:hover img {
+    transform: scale(1.1); 
+}
+
+/* Caption formatting[cite: 2] */
+figcaption {
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: #333333;
+    background-color: #ffffff;
+    z-index: 1; /* Keeps caption above the scaled image */
+}

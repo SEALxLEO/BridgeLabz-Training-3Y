@@ -1,0 +1,73 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Flexbox layout[cite: 2] */
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+/* Fade-in animation keyframes[cite: 2] */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 8px;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    
+    /* Smooth transition[cite: 2] */
+    transition: transform 0.3s ease; 
+    
+    /* Animation on load[cite: 2] */
+    animation: fadeIn 1s ease-in-out; 
+}
+
+/* Cards rise up on hover[cite: 2] */
+.card:hover {
+    transform: translateY(-10px); 
+}
+
+/* Middle card highlighted and slightly larger[cite: 2] */
+.card.highlighted {
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 50px 30px; /* Increased padding makes it larger */
+}
+
+/* Maintain size difference plus hover effect for middle card */
+.card.highlighted:hover {
+    transform: translateY(-10px);
+}
+
+/* Stack vertically below 750px[cite: 2] */
+@media (max-width: 750px) {
+    .pricing-container {
+        flex-direction: column; 
+    }
+    
+    .card.highlighted {
+        padding: 40px 30px; /* Reset size on mobile for consistency */
+    }
+}

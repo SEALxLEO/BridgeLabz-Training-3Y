@@ -1,0 +1,83 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Center card using Flexbox[cite: 2] */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ecf0f1;
+    font-family: Arial, sans-serif;
+}
+
+/* Container perspective[cite: 2] */
+.card-container {
+    width: 320px;
+    height: 400px;
+    perspective: 1000px; 
+}
+
+/* 3D space and smooth transitions[cite: 2] */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d; 
+}
+
+/* Flip 180 degrees on hover[cite: 2] */
+.card-container:hover .card-inner {
+    transform: rotateY(180deg); 
+}
+
+/* Shared face styles */
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* Hide reverse side */
+    backface-visibility: hidden; 
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Front styling[cite: 2] */
+.card-front {
+    background-color: #ffffff;
+    color: #2c3e50;
+}
+
+.card-front img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+}
+
+.card-front h2 {
+    height: 30%;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+/* Back styling rotated initially[cite: 2] */
+.card-back {
+    background-color: #3498db;
+    color: #ffffff;
+    transform: rotateY(180deg); 
+    padding: 30px;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}

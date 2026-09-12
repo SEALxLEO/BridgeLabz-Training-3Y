@@ -1,0 +1,76 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+}
+
+/* Outer layout using Grid */
+.dashboard-wrapper {
+    display: grid;
+    /* Fractional units for width[cite: 2] */
+    grid-template-columns: 250px 1fr; 
+    grid-template-rows: 60px 1fr;
+    min-height: 100vh;
+}
+
+/* Header spans across all columns[cite: 2] */
+.header {
+    grid-column: 1 / -1; 
+    background-color: #2c3e50;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Vertical sidebar nav[cite: 2] */
+.sidebar {
+    background-color: #34495e;
+    padding: 20px 0;
+}
+
+.sidebar a {
+    display: block;
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 15px 20px;
+}
+
+.sidebar a:hover {
+    background-color: #2c3e50;
+}
+
+/* Main grid setup[cite: 2] */
+.main-content {
+    display: grid;
+    /* 2 columns using fr units[cite: 2] */
+    grid-template-columns: 1fr 1fr; 
+    /* grid-gap for spacing[cite: 2] */
+    grid-gap: 20px; 
+    padding: 20px;
+}
+
+.box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    /* Transition for hover[cite: 2] */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+/* One box spans two columns[cite: 2] */
+.box-span {
+    grid-column: span 2; 
+}
+
+/* Hover scales up and casts shadow[cite: 2] */
+.box:hover {
+    transform: scale(1.02); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
+}
