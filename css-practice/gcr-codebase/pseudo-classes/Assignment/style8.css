@@ -1,0 +1,50 @@
+/* Reset - Exclude global box-sizing for accurate demo */
+* { margin: 0; padding: 0; }
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    text-align: center;
+    max-width: 800px;
+}
+
+.description { margin-bottom: 40px; }
+.description h2 { color: #2c3e50; margin-bottom: 10px; }
+.description p { color: #555; line-height: 1.6; }
+
+/* Side by side and responsive[cite: 2] */
+.boxes-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; 
+}
+
+/* Equal width and padding to highlight the difference[cite: 2] */
+.demo-box {
+    width: 250px;
+    padding: 40px;
+    border: 10px solid #34495e;
+    color: #fff;
+    border-radius: 8px;
+}
+
+/* Default box-sizing[cite: 2] */
+.box-content {
+    box-sizing: content-box; 
+    background-color: #e74c3c; /* Contrasting color[cite: 2] */
+}
+
+/* Border-box[cite: 2] */
+.box-border {
+    box-sizing: border-box; 
+    background-color: #27ae60; /* Contrasting color[cite: 2] */
+}

@@ -1,0 +1,68 @@
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Soft background gradient[cite: 2] */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Card-like container with Flexbox[cite: 2] */
+.ui-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1); 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.ui-card h2 { color: #2c3e50; text-align: center; }
+
+/* Consistent styling[cite: 2] */
+.ui-search, .ui-dropdown, .ui-btn {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Focus effects[cite: 2] */
+.ui-search:focus, .ui-dropdown:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.4); 
+}
+
+/* Buttons container */
+.btn-group {
+    display: flex;
+    gap: 15px;
+}
+
+/* Base button */
+.ui-btn {
+    flex: 1;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* Hover & Active effects[cite: 2] */
+.ui-btn:hover { transform: translateY(-2px); }
+.ui-btn:active { transform: translateY(0); }
+
+.btn-save { background: #3498db; color: #fff; }
+.btn-save:hover { background: #2980b9; }
+
+.btn-cancel { background: #ecf0f1; color: #333; }
+.btn-cancel:hover { background: #bdc3c7; }

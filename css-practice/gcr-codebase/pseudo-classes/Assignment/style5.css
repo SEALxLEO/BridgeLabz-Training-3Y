@@ -1,0 +1,66 @@
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { display: flex; justify-content: center; align-items: center; height: 100vh; background: #f4f7f6; }
+
+/* Flex alignment[cite: 2] */
+.btn-container {
+    display: flex;
+    gap: 20px; 
+}
+
+/* Base styling[cite: 2] */
+.btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease; 
+}
+
+/* Hover effect[cite: 2] */
+.btn:hover { 
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15); 
+}
+
+/* Active effect[cite: 2] */
+.btn:active { 
+    transform: translateY(0); 
+}
+
+/* Focus state[cite: 2] */
+.btn:focus { 
+    outline: 2px solid #2c3e50; 
+    outline-offset: 3px; 
+}
+
+/* Primary[cite: 2] */
+.btn-primary { background: #3498db; color: #fff; }
+.btn-primary:hover { background: #2980b9; }
+
+/* Secondary[cite: 2] */
+.btn-secondary { background: #2ecc71; color: #fff; }
+.btn-secondary:hover { background: #27ae60; }
+
+/* Outline[cite: 2] */
+.btn-outline { 
+    background: transparent; 
+    border: 2px solid #3498db; 
+    color: #3498db; 
+}
+.btn-outline:hover { 
+    background: #3498db; 
+    color: #fff; 
+}
+
+/* Disabled[cite: 2] */
+.btn:disabled {
+    background: #bdc3c7;
+    color: #7f8c8d;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none; 
+}

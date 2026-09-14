@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors Practice</title>
+    <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+    <!-- Semantic header[cite: 2] -->
+    <header class="page-header">
+        <h1>CSS Selectors Demonstration</h1>
+    </header>
+
+    <main class="content">
+        <!-- Element, Class, ID, and Attribute examples[cite: 2] -->
+        <section class="basic-selectors">
+            <h2>Basic Selectors</h2>
+            <p>This is a standard paragraph styled by an element selector.</p>
+            <p class="highlight-text">This paragraph uses a class selector.</p>
+            <p id="unique-text">This paragraph uses an ID selector.</p>
+            <a href="#" target="_blank">This link is styled using an attribute selector.</a>
+        </section>
+
+        <!-- Combinators examples[cite: 2] -->
+        <section class="combinator-section">
+            <h3>Combinator Selectors</h3>
+            
+            <div class="parent-box">
+                <p>I am a direct child (and a descendant).</p>
+                <div>
+                    <p>I am a descendant, but not a direct child.</p>
+                </div>
+            </div>
+
+            <h4>Sibling Tests</h4>
+            <p>I am the adjacent sibling to the h4.</p>
+            <span>Divider</span>
+            <p>I am a general sibling to the h4.</p>
+        </section>
+    </main>
+
+    <!-- Semantic footer[cite: 2] -->
+    <footer class="page-footer">
+        <p>&copy; 2026 CSS Practice Page</p>
+    </footer>
+</body>
+</html>

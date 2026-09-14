@@ -1,0 +1,90 @@
+/* Consistent box-sizing[cite: 2] */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Flexbox layout alignment[cite: 2] */
+.layout-wrapper {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f4f7f6;
+}
+
+.ui-header, .ui-footer {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+}
+
+/* Responsive card[cite: 2] */
+.ui-card {
+    flex: 1; /* Pushes footer down */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 12px;
+    
+    /* Consistent shadow and border[cite: 2] */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1); 
+    border: 1px solid #ddd;
+    width: 90%;
+    max-width: 400px;
+}
+
+.avatar-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 3px solid #3498db; /* Consistent border style[cite: 2] */
+}
+
+.ui-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+}
+
+.ui-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+/* Focus effects[cite: 2] */
+.ui-input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.4); 
+}
+
+.ui-btn {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ui-btn-outline {
+    background-color: transparent;
+    color: #3498db;
+    border: 1px solid #3498db;
+}
+
+/* Hover and focus effects[cite: 2] */
+.ui-btn:hover, .ui-btn:focus {
+    background-color: #2980b9;
+    color: white;
+}

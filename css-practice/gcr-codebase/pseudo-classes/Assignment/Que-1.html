@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-Classes Demonstration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Semantic header[cite: 2] -->
+    <header>
+        <h1>Pseudo-Classes in CSS</h1>
+    </header>
+
+    <!-- Flexbox container for a single row[cite: 2] -->
+    <main class="row-container">
+        
+        <!-- Hover on a link[cite: 2] -->
+        <section class="demo-box">
+            <a href="#" class="hover-link">Hover over me!</a>
+            <p><strong>:hover</strong> changes color and background when the mouse pointer is over the link.</p>
+        </section>
+
+        <!-- Focus on a button[cite: 2] -->
+        <section class="demo-box">
+            <button class="focus-btn">Click or Tab here</button>
+            <p><strong>:focus</strong> highlights the button with a green border when selected.</p>
+        </section>
+
+        <!-- Active on a button[cite: 2] -->
+        <section class="demo-box">
+            <button class="active-btn">Click and hold!</button>
+            <p><strong>:active</strong> darkens the button and shrinks it while being clicked.</p>
+        </section>
+
+        <!-- Nth-child on list items[cite: 2] -->
+        <section class="demo-box">
+            <ul class="nth-list">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+            <p><strong>:nth-child()</strong> applies alternating background colors to odd and even list items.</p>
+        </section>
+
+    </main>
+
+    <!-- Semantic footer[cite: 2] -->
+    <footer>
+        <p>&copy; 2026 Pseudo-Classes Assignment</p>
+    </footer>
+</body>
+</html>
