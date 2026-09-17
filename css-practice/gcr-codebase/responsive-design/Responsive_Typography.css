@@ -1,0 +1,51 @@
+/* Apply basic reset and font */
+body { 
+    margin: 0; 
+    font-family: sans-serif; 
+    background-color: #fefefe;
+    color: #333;
+}
+
+/* Centrally align text with balanced margins and padding */
+.typography-section {
+    text-align: center;
+    padding: 5rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Scale heading using relative units and clamp()[cite: 1] */
+h1 {
+    font-size: clamp(1.5rem, 4vw, 3rem); /*[cite: 1] */
+    margin-bottom: 1.5rem;
+    color: #222;
+}
+
+/* Scale paragraph using relative units and clamp()[cite: 1] */
+p {
+    font-size: clamp(1rem, 2vw, 1.5rem); /*[cite: 1] */
+    line-height: 1.8; /* Generous line height for wide screens */
+    margin-bottom: 1rem;
+}
+
+/* Style the working link */
+p a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Adjust line-height and spacing for better readability below 700px[cite: 1] */
+@media (max-width: 700px) {
+    .typography-section {
+        padding: 3rem 1.5rem; /* Reduce padding on smaller screens */
+    }
+    
+    p {
+        line-height: 1.5; /* Tighter line-height for mobile readability[cite: 1] */
+    }
+}

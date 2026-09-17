@@ -1,0 +1,60 @@
+/* Base styles and container padding */
+body { 
+    margin: 0; 
+    padding: 2rem; 
+    font-family: sans-serif; 
+    background-color: #f4f4f9; 
+}
+
+/* Flexbox Layout for the row of cards */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Equal spacing between cards */
+}
+
+/* Desktop: 4 columns */
+.card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    
+    /* calc(25% - 15px) precisely calculates width minus the 20px gaps */
+    flex: 1 1 calc(25% - 15px);
+    transition: background-color 0.3s ease;
+}
+
+/* Card Link Styles */
+.card a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+/* Change background color on hover */
+.card:hover {
+    background-color: #d1ecf1;
+}
+
+/* Tablet (max-width 900px): 2 columns */
+@media (max-width: 900px) {
+    .card {
+        /* calc(50% - 10px) accounts for the single 20px gap in the middle */
+        flex: 1 1 calc(50% - 10px);
+    }
+}
+
+/* Mobile (max-width 600px): 1 column */
+@media (max-width: 600px) {
+    .card {
+        flex: 1 1 100%;
+    }
+}

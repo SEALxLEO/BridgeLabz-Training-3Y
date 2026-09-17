@@ -1,0 +1,52 @@
+body { font-family: sans-serif; margin: 0; padding: 2rem; background: #fafafa; }
+header { text-align: center; margin-bottom: 2rem; }
+
+/* Grid Layout for Desktop (2-3 columns based on width) */
+.cheat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cheat-box {
+    background: #ffffff;
+    border-left: 5px solid #007bff;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-radius: 4px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cheat-box h3 { margin-top: 0; color: #333; }
+.cheat-box p { margin-bottom: 0; color: #555; }
+
+/* Interactive Hover Effects */
+.cheat-box:hover {
+    background: #f0f8ff;
+    transform: translateY(-5px);
+}
+
+/* Small screens: convert to stacked key-value rows */
+@media (max-width: 700px) {
+    .cheat-grid {
+        grid-template-columns: 1fr;
+    }
+    .cheat-box {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        gap: 15px;
+        padding: 1rem;
+    }
+    /* Heading acts as the 'key' */
+    .cheat-box h3 { 
+        margin: 0; 
+        color: #007bff; 
+        white-space: nowrap;
+    }
+    .cheat-box h3::after {
+        content: ":";
+    }
+}

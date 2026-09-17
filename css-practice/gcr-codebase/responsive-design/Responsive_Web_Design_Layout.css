@@ -1,0 +1,66 @@
+/* Base setup to push footer to bottom */
+body { 
+    margin: 0; 
+    font-family: sans-serif; 
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; 
+}
+
+/* Flexbox Header */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #222;
+    color: white;
+    padding: 1rem 2rem;
+}
+
+.navbar a { 
+    color: white; 
+    text-decoration: none; 
+    margin-left: 1rem; 
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Flexbox Main Content */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 2rem;
+    flex-grow: 1; /* Pushes the footer down */
+}
+
+/* Feature Boxes */
+.feature-box {
+    background: #eee;
+    padding: 2rem;
+    flex: 1;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Scale Effect */
+.feature-box:hover {
+    transform: scale(1.05);
+}
+
+/* Centered Footer */
+.footer { 
+    text-align: center; 
+    background: #222; 
+    color: white; 
+    padding: 1rem; 
+}
+
+/* Stack feature boxes vertically below 750px */
+@media (max-width: 750px) {
+    .features {
+        flex-direction: column;
+    }
+}

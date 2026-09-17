@@ -1,0 +1,37 @@
+    /* Base styles */
+body { margin: 0; font-family: sans-serif; text-align: center; }
+header { background: #333; color: #fff; padding: 1rem; }
+
+/* Grid Layout */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+figure { margin: 0; }
+img { 
+    width: 100%; 
+    height: auto; 
+    border-radius: 8px;
+    transition: filter 0.4s ease; /* Smooth hover transition */
+}
+
+/* Filters */
+.filter-blur { filter: blur(4px); }
+.filter-grayscale { filter: grayscale(100%); }
+.filter-sepia { filter: sepia(100%); }
+.filter-brightness { filter: brightness(1.5); }
+.filter-contrast { filter: contrast(200%); }
+.filter-hue { filter: hue-rotate(90deg); }
+
+/* Remove filter on hover */
+img:hover { filter: none; }
+
+/* Force single column below 600px */
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}

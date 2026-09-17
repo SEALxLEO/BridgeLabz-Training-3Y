@@ -1,0 +1,72 @@
+/* Base styles */
+body { 
+    margin: 0; 
+    padding: 3rem 2rem; 
+    font-family: sans-serif; 
+    background-color: #eef2f3; 
+}
+
+/* Keyframes for fade-in animation on page load[cite: 1] */
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: scale(0.9); 
+    }
+    to { 
+        opacity: 1; 
+        transform: scale(1); 
+    }
+}
+
+/* Flexbox Layout[cite: 1] */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    animation: fadeIn 1s ease-out forwards; /* Apply animation[cite: 1] */
+}
+
+/* Profile Card Styling */
+.profile-card {
+    background: white;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    /* Transition for the lift effect */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Apply sepia filter to the image[cite: 1] */
+.profile-card img {
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    filter: sepia(100%); /*[cite: 1] */
+    transition: filter 0.4s ease;
+}
+
+/* Hover effects[cite: 1] */
+.profile-card:hover {
+    transform: translateY(-10px); /* Lift card[cite: 1] */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.profile-card:hover img {
+    filter: none; /* Remove filter on hover[cite: 1] */
+}
+
+/* Stack cards vertically below 800px[cite: 1] */
+@media (max-width: 800px) {
+    .profile-container {
+        flex-direction: column; /*[cite: 1] */
+        align-items: center;
+    }
+    
+    .profile-card {
+        width: 100%;
+        max-width: 400px; /* Prevent cards from getting too wide */
+    }
+}

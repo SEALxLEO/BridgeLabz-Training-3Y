@@ -1,0 +1,53 @@
+body { font-family: sans-serif; margin: 0; background: #eef2f5; color: #333; }
+
+/* Grid Layout for desktop */
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 0 2rem 3rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.principle-box {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+    /* Transition for gradient and text changes */
+    transition: background 0.4s ease, color 0.4s ease, transform 0.3s ease;
+}
+
+.principle-box h3 { margin-top: 0; }
+
+code { 
+    display: inline-block; 
+    background: #f4f4f4; 
+    padding: 8px 12px; 
+    margin-top: 15px; 
+    border-radius: 4px;
+    font-family: monospace;
+    font-weight: bold;
+    color: #c7254e;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* Hover: Apply gradient background and change text color */
+.principle-box:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transform: translateY(-8px);
+}
+
+.principle-box:hover code { 
+    background: rgba(255,255,255,0.2); 
+    color: #fff; 
+}
+
+/* Single column layout below 600px */
+@media (max-width: 600px) {
+    .principles-grid {
+        grid-template-columns: 1fr;
+    }
+}
