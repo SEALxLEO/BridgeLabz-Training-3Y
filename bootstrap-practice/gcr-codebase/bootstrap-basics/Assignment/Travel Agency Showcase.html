@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Agency Showcase</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Extract to a separate CSS file */
+        .carousel-item img {
+            height: 500px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Carousel with custom intervals -->
+    <div id="travelCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="3000">
+                <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21" class="d-block w-100" alt="Beach">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                    <h5>Tropical Getaway</h5>
+                    <p>Relax on pristine white sand beaches.</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b" class="d-block w-100" alt="Mountains">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                    <h5>Mountain Expedition</h5>
+                    <p>Conquer the highest peaks this summer.</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a" class="d-block w-100" alt="City">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                    <h5>Urban Exploration</h5>
+                    <p>Discover the vibrant nightlife of historic cities.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#travelCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#travelCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Progress Bar Section -->
+    <div class="container mt-5 mb-5 text-center">
+        <h3>Current Trip Booking Status</h3>
+        <p class="text-muted">You are almost ready for your trip!</p>
+        <div class="progress" style="height: 30px;">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">Booking 70% Complete</div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-1">Wanderlust Travel Agency &copy; 2026</p>
+            <p class="mb-0">Contact: info@wanderlust-example.com | 1-800-555-0199</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Required for Carousel functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

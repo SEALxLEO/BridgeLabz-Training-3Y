@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Themed Blog Homepage</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Extract to a separate CSS file */
+        :root {
+            /* Overriding Bootstrap Theme Variables */
+            --bs-primary: #8e44ad; /* Custom purple primary color */
+            --bs-primary-rgb: 142, 68, 173;
+            --bs-font-sans-serif: 'Poppins', sans-serif;
+            --bs-body-font-family: var(--bs-font-sans-serif);
+        }
+        body {
+            font-family: var(--bs-font-sans-serif);
+        }
+        .btn-primary {
+            background-color: var(--bs-primary);
+            border-color: var(--bs-primary);
+        }
+        .btn-primary:hover {
+            background-color: #732d91;
+            border-color: #732d91;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-primary text-white text-center py-5 mb-4">
+        <div class="container">
+            <h1 class="display-5 fw-bold">Devang's Tech & Philosophy Blog</h1>
+            <p>Insights on Full-Stack Dev, Security, and Life</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="row g-4">
+            <!-- Blog Card 1 -->
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title text-primary">Mastering the DOM</h2>
+                        <p class="card-text">An in-depth look at how JavaScript interacts with the Document Object Model for dynamic UIs.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Blog Card 2 -->
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title text-primary">Understanding Epictetus</h2>
+                        <p class="card-text">Applying stoic philosophy to modern-day software engineering challenges.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center mt-5 py-4 bg-light border-top">
+        <p class="mb-0 text-muted">&copy; 2026 Devang Kumar. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

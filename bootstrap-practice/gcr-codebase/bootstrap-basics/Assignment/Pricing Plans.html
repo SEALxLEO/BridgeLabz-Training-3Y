@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Extract to a separate CSS file */
+        .pricing-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .pricing-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important; /* Applies shadow-lg equivalent */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5 text-center">
+        <h2 class="mb-5">Choose Your Plan</h2>
+        
+        <div class="row g-4 align-items-center">
+            <!-- Basic Plan -->
+            <div class="col-md-4">
+                <div class="card pricing-card border-light shadow-sm">
+                    <div class="card-header bg-light py-3"><h4 class="my-0 fw-normal">Basic</h4></div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>10 Users included</li>
+                            <li>2 GB of storage</li>
+                            <li>Email support</li>
+                        </ul>
+                        <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pro Plan (Highlighted) -->
+            <div class="col-md-4">
+                <div class="card pricing-card border-primary shadow-sm bg-primary text-white">
+                    <div class="card-header border-primary py-3"><h4 class="my-0 fw-bold">Pro</h4></div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">$15<small class="fw-light">/mo</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>20 Users included</li>
+                            <li>10 GB of storage</li>
+                            <li>Priority email support</li>
+                        </ul>
+                        <button type="button" class="w-100 btn btn-lg btn-light text-primary fw-bold">Get Started</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enterprise Plan -->
+            <div class="col-md-4">
+                <div class="card pricing-card border-light shadow-sm">
+                    <div class="card-header bg-light py-3"><h4 class="my-0 fw-normal">Enterprise</h4></div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>30 Users included</li>
+                            <li>15 GB of storage</li>
+                            <li>Phone and email support</li>
+                        </ul>
+                        <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

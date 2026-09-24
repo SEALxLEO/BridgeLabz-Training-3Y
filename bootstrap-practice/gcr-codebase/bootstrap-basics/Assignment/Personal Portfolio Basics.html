@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Extract to a separate CSS file */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="bg-light text-dark">
+    <!-- Using p-5, mt-4, text-center -->
+    <header class="container text-center mt-4 p-5 bg-white shadow-sm rounded">
+        <!-- Profile image using .img-fluid and .rounded-circle -->
+        <img src="myimg.jpg" alt="Profile Picture" class="img-fluid rounded-circle profile-img mb-3">
+        <h1 class="fw-bold">Devang Kumar</h1>
+        <p class="lead text-muted">Full-Stack Web Developer & Security Enthusiast</p>
+        
+        <div class="mt-3 mb-4">
+            <button class="btn btn-primary me-2">Hire Me</button>
+            <button class="btn btn-outline-secondary">Download CV</button>
+        </div>
+    </header>
+
+    <main class="container mt-4 mb-5">
+        <section class="row justify-content-center">
+            <div class="col-md-6 bg-white p-4 rounded shadow-sm">
+                <h3 class="text-center mb-3">Contact Me</h3>
+                <!-- Contact form using .form-control -->
+                <form>
+                    <div class="mb-3">
+                        <label for="emailInput" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="emailInput" placeholder="name@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="messageInput" class="form-label">Message</label>
+                        <textarea class="form-control" id="messageInput" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
