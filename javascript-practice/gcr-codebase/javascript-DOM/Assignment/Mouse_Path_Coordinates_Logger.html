@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>Mouse Logger</title>
+<style>#box{width:400px;height:400px;border:2px solid;position:relative}.dot{width:10px;height:10px;background:red;border-radius:50%;position:absolute}</style></head>
+<body><div id="box"></div><p id="coords">Move inside the box</p>
+<script>
+box.onmousemove=e=>coords.textContent=`clientX: ${e.clientX}, clientY: ${e.clientY}`;
+box.ondblclick=e=>{
+    const r=box.getBoundingClientRect(),dot=document.createElement("div");
+    dot.className="dot";dot.style.left=`${e.clientX-r.left-5}px`;dot.style.top=`${e.clientY-r.top-5}px`;box.appendChild(dot);
+};
+</script></body></html>

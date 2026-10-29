@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>Multi-Step Form</title></head>
+<body>
+<div id="step1"><h3>Step 1: Name</h3><input id="name"><button onclick="next(1)">Next</button></div>
+<div id="step2" hidden><h3>Step 2: Email</h3><input id="email"><button onclick="show(1)">Back</button><button onclick="next(2)">Next</button></div>
+<div id="step3" hidden><h3>Step 3: Password</h3><input id="password" type="password"><button onclick="show(2)">Back</button><button onclick="finish()">Finish</button></div>
+<div id="summary"></div>
+<script>
+function show(step){
+    [1,2,3].forEach(i=>document.getElementById("step"+i).hidden=i!==step);
+}
+function next(step){
+    if(step===1&&!name.value.trim())return alert("Enter name");
+    if(step===2&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value))return alert("Enter valid email");
+    show(step+1);
+}
+function finish(){
+    if(password.value.length<6)return alert("Password must be at least 6 characters");
+    summary.textContent=`Name: ${name.value}, Email: ${email.value}, Form complete`;
+}
+</script></body></html>

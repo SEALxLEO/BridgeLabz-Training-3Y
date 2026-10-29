@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>Dynamic Product List</title>
+<style>body{font-family:Arial;padding:20px}li{margin:8px}</style></head>
+<body><h2>Product List</h2>
+<input id="productInput" placeholder="Product name"><button id="addButton">Add</button>
+<ul id="productList"></ul>
+<script>
+const input=document.getElementById("productInput");
+const list=document.getElementById("productList");
+let editingItem=null;
+document.getElementById("addButton").onclick=()=>{
+    const name=input.value.trim(); if(!name)return;
+    const item=document.createElement("li");
+    item.innerHTML=`<span>${name}</span> <button data-action="edit">Edit</button> <button data-action="delete">Delete</button>`;
+    list.appendChild(item); input.value="";
+};
+list.onclick=e=>{
+    if(e.target.dataset.action==="delete")e.target.parentElement.remove();
+    if(e.target.dataset.action==="edit"){
+        editingItem=e.target.parentElement.querySelector("span");
+        editingItem.contentEditable="true"; editingItem.focus();
+    }
+};
+document.addEventListener("click",e=>{
+    if(editingItem&&!editingItem.contains(e.target)){
+        editingItem.contentEditable="false"; editingItem=null;
+    }
+});
+</script></body></html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>Character Counter</title></head>
+<body><textarea id="text" maxlength="100" rows="6" cols="40"></textarea>
+<div id="counter">100 characters left</div><button id="reset">Reset</button>
+<script>
+const text=document.getElementById("text"),counter=document.getElementById("counter");
+function update(){
+    const left=100-text.value.length;
+    counter.textContent=`${left} characters left`;
+    counter.style.color=left===0?"red":left<=20?"goldenrod":"black";
+}
+text.oninput=update;
+text.onkeydown=e=>{
+    if(text.value.length>=100&&e.key.length===1&&!e.ctrlKey&&!e.metaKey)e.preventDefault();
+};
+document.getElementById("reset").onclick=()=>{text.value="";update()};
+</script></body></html>

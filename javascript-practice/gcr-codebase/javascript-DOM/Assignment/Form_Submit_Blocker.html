@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>Form Submit Blocker</title>
+<style>.error{color:red}</style></head>
+<body><form id="form">
+<input id="name" placeholder="Name"><div id="nameError" class="error"></div>
+<input id="email" placeholder="Email"><div id="emailError" class="error"></div>
+<input id="password" type="password" placeholder="Password"><div id="passwordError" class="error"></div>
+<button>Submit</button></form><p id="success"></p>
+<script>
+const fields={name,email,password};
+function validate(){
+    let ok=true;
+    nameError.textContent=emailError.textContent=passwordError.textContent="";
+    if(!name.value.trim()){nameError.textContent="Name is required";ok=false}
+    if(!email.value.includes("@")){emailError.textContent="Valid email is required";ok=false}
+    if(password.value.length<6){passwordError.textContent="Minimum 6 characters";ok=false}
+    return ok;
+}
+form.onsubmit=e=>{e.preventDefault();success.textContent=validate()?"Form Submitted Successfully":""};
+Object.values(fields).forEach(field=>field.oninput=validate);
+</script></body></html>

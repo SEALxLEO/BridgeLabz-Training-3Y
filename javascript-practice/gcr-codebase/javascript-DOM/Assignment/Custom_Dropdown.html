@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>Custom Dropdown</title>
+<style>#options{display:none}#options button{display:block;width:150px}</style></head>
+<body><button id="main">Select option</button><div id="options">
+<button data-value="Option 1">Option 1</button><button data-value="Option 2">Option 2</button><button data-value="Option 3">Option 3</button>
+</div>
+<script>
+main.onclick=e=>{e.stopPropagation();options.style.display=options.style.display==="block"?"none":"block"};
+options.onclick=e=>{if(e.target.dataset.value){main.textContent=e.target.dataset.value;options.style.display="none"}};
+document.addEventListener("click",()=>options.style.display="none",true);
+</script></body></html>

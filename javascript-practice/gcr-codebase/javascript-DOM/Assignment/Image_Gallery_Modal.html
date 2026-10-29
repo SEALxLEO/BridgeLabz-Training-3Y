@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>Image Gallery</title>
+<style>
+.gallery{display:grid;grid-template-columns:repeat(3,150px);gap:10px}.gallery img{width:150px;height:100px;object-fit:cover;cursor:pointer}
+#modal{display:none;position:fixed;inset:0;background:#000b;align-items:center;justify-content:center}#modalContent{background:white;padding:10px}#bigImage{max-width:90vw}
+</style></head>
+<body><h2>Image Gallery</h2><div class="gallery" id="gallery"></div>
+<div id="modal"><div id="modalContent"><img id="bigImage"></div></div>
+<script>
+const gallery=document.getElementById("gallery"),modal=document.getElementById("modal"),big=document.getElementById("bigImage");
+for(let i=1;i<=6;i++){const img=document.createElement("img");img.src=`https://picsum.photos/seed/gallery${i}/300/200`;gallery.appendChild(img)}
+gallery.onclick=e=>{if(e.target.tagName==="IMG"){big.src=e.target.src;modal.style.display="flex"}};
+modal.onclick=()=>modal.style.display="none";
+document.getElementById("modalContent").onclick=e=>e.stopPropagation();
+</script></body></html>
