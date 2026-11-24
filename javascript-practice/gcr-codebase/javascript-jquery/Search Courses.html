@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Courses</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f1f5f9; color: #0f172a; }
+        header { background: #0f766e; color: #ffffff; padding: 1.75rem; text-align: center; }
+        main { max-width: 920px; margin: 2rem auto; padding: 0 1rem; }
+        .search-bar { display: flex; gap: 0.75rem; flex-wrap: wrap; background: #ffffff; padding: 1.25rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(15, 23, 42, 0.06); margin-bottom: 1rem; }
+        #courseSearch { flex: 1; min-width: 240px; padding: 0.7rem 0.9rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 1rem; }
+        #clearSearchBtn { background: #475569; color: #ffffff; border: none; padding: 0.7rem 1.2rem; border-radius: 8px; cursor: pointer; font-size: 0.95rem; }
+        #clearSearchBtn:hover { background: #334155; }
+        .count-bar { margin-bottom: 1rem; font-weight: 600; color: #0f766e; }
+        .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1rem; }
+        .course-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05); }
+        .course-title { font-size: 1.1rem; margin-bottom: 0.4rem; color: #0f172a; }
+        .course-desc { font-size: 0.92rem; color: #475569; }
+        footer { text-align: center; padding: 1.5rem; color: #64748b; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Online Course Catalog</h1>
+        <p>Filter courses in real-time with instant match highlighting and dynamic course count.</p>
+    </header>
+    <main>
+        <section class="search-bar" aria-label="Course Search">
+            <input type="text" id="courseSearch" placeholder="Search courses by title or topic (e.g., JavaScript, Data, Python)...">
+            <button id="clearSearchBtn" type="button">Clear Search</button>
+        </section>
+        <p class="count-bar">Matched Courses: <span id="matchCount">6</span></p>
+        <section id="courseList" class="course-grid" aria-label="Courses">
+            <article class="course-card">
+                <h2 class="course-title">Full-Stack Web Development with JavaScript</h2>
+                <p class="course-desc">Build responsive web apps using HTML5, CSS3, Bootstrap, jQuery, Node.js, and REST APIs.</p>
+            </article>
+            <article class="course-card">
+                <h2 class="course-title">Data Structures and Algorithms in Java</h2>
+                <p class="course-desc">Master arrays, trees, graphs, dynamic programming, and interview coding patterns.</p>
+            </article>
+            <article class="course-card">
+                <h2 class="course-title">Database Management Systems &amp; SQL</h2>
+                <p class="course-desc">Learn relational modeling, indexing, query optimization, and transactions in PostgreSQL.</p>
+            </article>
+            <article class="course-card">
+                <h2 class="course-title">Modern React &amp; Frontend Architecture</h2>
+                <p class="course-desc">Create scalable single-page applications with hooks, state management, and routing.</p>
+            </article>
+            <article class="course-card">
+                <h2 class="course-title">Python for Data Science &amp; Analytics</h2>
+                <p class="course-desc">Analyze real datasets with NumPy, pandas, and visualization workflows.</p>
+            </article>
+            <article class="course-card">
+                <h2 class="course-title">Operating Systems &amp; Computer Networks</h2>
+                <p class="course-desc">Explore processes, memory scheduling, TCP/IP protocols, and distributed systems.</p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>Search Courses Demo</p>
+    </footer>
+    <script src="Search Courses.js"></script>
+</body>
+</html>

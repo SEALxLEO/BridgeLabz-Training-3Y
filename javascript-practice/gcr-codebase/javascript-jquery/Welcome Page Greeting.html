@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page Greeting</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+            color: #ffffff;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+        }
+
+        #greeting {
+            font-size: 2rem;
+            cursor: pointer;
+            display: inline-block;
+            padding: 0.5rem 1.25rem;
+            border-radius: 8px;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        #greeting:hover {
+            background: rgba(255, 255, 255, 0.18);
+            transform: scale(1.02);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        button {
+            background: #2563eb;
+            color: #ffffff;
+            border: none;
+            padding: 0.65rem 1.25rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        #toggleMessageBtn {
+            background: #0f766e;
+        }
+
+        #toggleMessageBtn:hover {
+            background: #115e59;
+        }
+
+        #welcomeMessage {
+            background: #eff6ff;
+            border-left: 4px solid #2563eb;
+            padding: 1rem 1.25rem;
+            border-radius: 6px;
+            margin-top: 0.5rem;
+        }
+
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        article {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        article h3 {
+            font-size: 1rem;
+            color: #1d4ed8;
+            margin-bottom: 0.35rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.25rem;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 id="greeting" title="Click for a greeting alert">Loading greeting...</h1>
+        <p>Click the greeting above to trigger an interactive alert.</p>
+    </header>
+    <main>
+        <section aria-label="Greeting Controls">
+            <h2>Visitor Controls</h2>
+            <div class="controls">
+                <button id="changeGreetingBtn" type="button">Change Greeting</button>
+                <button id="toggleMessageBtn" type="button">Toggle Welcome Message</button>
+            </div>
+            <div id="welcomeMessage">
+                <p>Welcome to our portal! Explore today's updates, resources, and tools designed to keep your day
+                    productive.</p>
+            </div>
+        </section>
+        <section aria-label="Daily Highlights">
+            <h2>Quick Highlights</h2>
+            <div class="highlights">
+                <article>
+                    <h3>Daily Focus</h3>
+                    <p>Set clear priorities before starting your main tasks.</p>
+                </article>
+                <article>
+                    <h3>Learning Hub</h3>
+                    <p>Access curated tutorials and interactive coding exercises.</p>
+                </article>
+                <article>
+                    <h3>Project Tracker</h3>
+                    <p>Review milestones and upcoming deadlines at a glance.</p>
+                </article>
+                <article>
+                    <h3>Community Forum</h3>
+                    <p>Connect with peers, ask questions, and share solutions.</p>
+                </article>
+                <article>
+                    <h3>Wellness Break</h3>
+                    <p>Take short breaks to stay refreshed and sharp all day.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Welcome Page Greeting Demo</p>
+    </footer>
+    <script src="Welcome Page Greeting.js"></script>
+</body>
+
+</html>

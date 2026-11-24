@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Members Directory</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f1f5f9;
+            color: #0f172a;
+        }
+
+        header {
+            background: #0f172a;
+            color: #ffffff;
+            padding: 1.75rem;
+            text-align: center;
+        }
+
+        main {
+            max-width: 980px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .top-actions {
+            margin-bottom: 1.5rem;
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        button {
+            background: #2563eb;
+            color: #ffffff;
+            border: none;
+            padding: 0.6rem 1.1rem;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 0.92rem;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        #resetHighlightBtn {
+            background: #475569;
+        }
+
+        .department {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 3px 8px rgba(15, 23, 42, 0.06);
+        }
+
+        .dept-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            padding: 0.5rem 0.75rem;
+            background: #e2e8f0;
+            border-radius: 8px;
+        }
+
+        .dept-header h2 {
+            font-size: 1.15rem;
+        }
+
+        .toggle-team-btn {
+            background: #0f766e;
+            padding: 0.4rem 0.85rem;
+            font-size: 0.85rem;
+        }
+
+        .team-block {
+            border-left: 3px solid #94a3b8;
+            padding-left: 1rem;
+            margin-top: 0.75rem;
+        }
+
+        .manager {
+            background: #eff6ff;
+            border: 1px solid #93c5fd;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .direct-reports {
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+        }
+
+        .member {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 0.7rem 1rem;
+            transition: background-color 0.25s ease, border-color 0.25s ease;
+        }
+
+        .employee-name {
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .contact-info {
+            display: none;
+            margin-top: 0.35rem;
+            font-size: 0.88rem;
+            color: #475569;
+            background: #ffffff;
+            padding: 0.4rem 0.65rem;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+        }
+
+        .highlight-report {
+            background-color: #dbeafe !important;
+            border-color: #2563eb !important;
+        }
+
+        .highlight-selected {
+            background-color: #fef08a !important;
+            border-color: #eab308 !important;
+        }
+
+        .highlight-sibling {
+            background-color: #dcfce7 !important;
+            border-color: #16a34a !important;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Team Members Directory</h1>
+        <p>Click a manager for direct reports, hover an employee for contact info, click a department header to shade
+            members, or highlight random sibling employees.</p>
+    </header>
+    <main>
+        <div class="top-actions">
+            <button id="randomEmployeeBtn" type="button">Select Random Employee &amp; Highlight Siblings</button>
+            <button id="resetHighlightBtn" type="button">Reset Highlights</button>
+        </div>
+
+        <section class="department" aria-label="Engineering Department">
+            <div class="dept-header">
+                <h2>Engineering Department (Click Department)</h2>
+                <button class="toggle-team-btn" type="button">Collapse / Expand Team</button>
+            </div>
+            <div class="team-block">
+                <div class="manager">Manager: Aarav Sharma (VP of Engineering)</div>
+                <div class="direct-reports">
+                    <article class="member employee">
+                        <span class="employee-name">Neha Verma - Frontend Developer</span>
+                        <div class="contact-info">Email: neha.verma@company.com | Ext: 201</div>
+                    </article>
+                    <article class="member employee">
+                        <span class="employee-name">Rohan Mehta - Backend Engineer</span>
+                        <div class="contact-info">Email: rohan.mehta@company.com | Ext: 202</div>
+                    </article>
+                    <article class="member employee">
+                        <span class="employee-name">Priya Nair - QA Automation Engineer</span>
+                        <div class="contact-info">Email: priya.nair@company.com | Ext: 203</div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="department" aria-label="Product Design Department">
+            <div class="dept-header">
+                <h2>Product Design Department (Click Department)</h2>
+                <button class="toggle-team-btn" type="button">Collapse / Expand Team</button>
+            </div>
+            <div class="team-block">
+                <div class="manager">Manager: Kabir Joshi (Design Lead)</div>
+                <div class="direct-reports">
+                    <article class="member employee">
+                        <span class="employee-name">Ananya Kapoor - UI Designer</span>
+                        <div class="contact-info">Email: ananya.kapoor@company.com | Ext: 301</div>
+                    </article>
+                    <article class="member employee">
+                        <span class="employee-name">Vikram Rao - UX Researcher</span>
+                        <div class="contact-info">Email: vikram.rao@company.com | Ext: 302</div>
+                    </article>
+                    <article class="member employee">
+                        <span class="employee-name">Meera Iyer - Interaction Designer</span>
+                        <div class="contact-info">Email: meera.iyer@company.com | Ext: 303</div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="department" aria-label="Marketing Department">
+            <div class="dept-header">
+                <h2>Marketing Department (Click Department)</h2>
+                <button class="toggle-team-btn" type="button">Collapse / Expand Team</button>
+            </div>
+            <div class="team-block">
+                <div class="manager">Manager: Siddharth Kulkarni (Marketing Head)</div>
+                <div class="direct-reports">
+                    <article class="member employee">
+                        <span class="employee-name">Divya Menon - Content Strategist</span>
+                        <div class="contact-info">Email: divya.menon@company.com | Ext: 401</div>
+                    </article>
+                    <article class="member employee">
+                        <span class="employee-name">Arjun Patel - SEO Specialist</span>
+                        <div class="contact-info">Email: arjun.patel@company.com | Ext: 402</div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Team Members Directory Demo</p>
+    </footer>
+    <script src="Team Members Directory.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Offer Banner</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8fafc; color: #0f172a; }
+        header { background: #1e1b4b; color: #ffffff; padding: 1.75rem; text-align: center; }
+        main { max-width: 960px; margin: 2rem auto; padding: 0 1rem; }
+        section { background: #ffffff; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08); }
+        h2 { margin-bottom: 1rem; font-size: 1.25rem; }
+        .rotator-stage { position: relative; min-height: 110px; }
+        .rotator-banner { display: none; padding: 1.5rem; border-radius: 10px; color: #ffffff; text-align: center; font-size: 1.15rem; font-weight: 600; }
+        .rotator-banner.active { display: block; }
+        .toolbar { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; margin-bottom: 1.25rem; }
+        select, button { padding: 0.55rem 0.95rem; border-radius: 7px; font-size: 0.9rem; }
+        select { border: 1px solid #cbd5e1; background: #ffffff; }
+        button { border: none; background: #4f46e5; color: #ffffff; cursor: pointer; transition: background 0.2s ease; }
+        button:hover { background: #4338ca; }
+        .btn-hide { background: #dc2626; }
+        .btn-hide:hover { background: #b91c1c; }
+        .btn-show { background: #16a34a; }
+        .btn-show:hover { background: #15803d; }
+        .btn-slide { background: #0284c7; }
+        .btn-slide:hover { background: #0369a1; }
+        .btn-fade { background: #9333ea; }
+        .btn-fade:hover { background: #7e22ce; }
+        .banner-list { display: flex; flex-direction: column; gap: 0.85rem; }
+        .offer-banner { padding: 1.15rem 1.25rem; border-radius: 10px; color: #ffffff; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; }
+        .bg-1 { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
+        .bg-2 { background: linear-gradient(135deg, #059669, #047857); }
+        .bg-3 { background: linear-gradient(135deg, #d97706, #b45309); }
+        .bg-4 { background: linear-gradient(135deg, #dc2626, #b91c1c); }
+        .bg-5 { background: linear-gradient(135deg, #7c3aed, #6d28d9); }
+        footer { text-align: center; padding: 1.5rem; color: #64748b; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Special Offer Banners</h1>
+        <p>Interactive banner visibility, slide, fade, and 5-second automatic fade rotation.</p>
+    </header>
+    <main>
+        <section aria-label="Automatic Rotating Banner">
+            <h2>Live Auto-Rotating Spotlight (Every 5 Seconds)</h2>
+            <div class="rotator-stage">
+                <article class="rotator-banner bg-1 active">Flash Sale: Flat 40% Off on All Full-Stack Web Courses!</article>
+                <article class="rotator-banner bg-2">Weekend Deal: Buy 1 Get 1 Free on Coding Interview Guides!</article>
+                <article class="rotator-banner bg-3">Student Exclusive: Extra 25% Discount with Campus Email!</article>
+                <article class="rotator-banner bg-4">Limited Offer: Free Express Shipping on Orders Above $50!</article>
+                <article class="rotator-banner bg-5">Mega Bundle: Save $120 on Annual Cloud Lab Subscriptions!</article>
+            </div>
+        </section>
+        <section aria-label="Manual Banner Controls">
+            <h2>Manage Promotional Banners</h2>
+            <div class="toolbar">
+                <label for="bannerSelect">Target Banner:</label>
+                <select id="bannerSelect">
+                    <option value="all">All Banners</option>
+                    <option value="#banner1">Banner 1 - Electronics</option>
+                    <option value="#banner2">Banner 2 - Books</option>
+                    <option value="#banner3">Banner 3 - Accessories</option>
+                    <option value="#banner4">Banner 4 - Software</option>
+                    <option value="#banner5">Banner 5 - Membership</option>
+                </select>
+                <button id="hideBtn" class="btn-hide" type="button">Hide</button>
+                <button id="showBtn" class="btn-show" type="button">Show</button>
+                <button id="slideUpBtn" class="btn-slide" type="button">Slide Up</button>
+                <button id="slideDownBtn" class="btn-slide" type="button">Slide Down</button>
+                <button id="fadeOutBtn" class="btn-fade" type="button">Fade Out</button>
+                <button id="fadeInBtn" class="btn-fade" type="button">Fade In</button>
+            </div>
+            <div class="banner-list">
+                <article id="banner1" class="offer-banner bg-1">
+                    <div>
+                        <h3>Banner 1: Electronics Super Sale</h3>
+                        <p>Up to 35% off headphones, keyboards, and monitors.</p>
+                    </div>
+                </article>
+                <article id="banner2" class="offer-banner bg-2">
+                    <div>
+                        <h3>Banner 2: Tech Books Clearance</h3>
+                        <p>Save 30% on Algorithms, JavaScript, and System Design titles.</p>
+                    </div>
+                </article>
+                <article id="banner3" class="offer-banner bg-3">
+                    <div>
+                        <h3>Banner 3: Desk Accessories Promo</h3>
+                        <p>Flat 20% off ergonomic stands, lamps, and USB-C hubs.</p>
+                    </div>
+                </article>
+                <article id="banner4" class="offer-banner bg-4">
+                    <div>
+                        <h3>Banner 4: Developer Tools Bundle</h3>
+                        <p>6 months free pro license for verified engineering students.</p>
+                    </div>
+                </article>
+                <article id="banner5" class="offer-banner bg-5">
+                    <div>
+                        <h3>Banner 5: Prime Membership Bonus</h3>
+                        <p>Zero delivery charges plus early access to seasonal launches.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Special Offer Banner Demo</p>
+    </footer>
+    <script src="Special Offer Banner.js"></script>
+</body>
+</html>

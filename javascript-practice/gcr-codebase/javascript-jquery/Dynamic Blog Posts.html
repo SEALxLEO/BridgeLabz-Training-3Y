@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Blog Posts</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8fafc; color: #0f172a; }
+        header { background: #1e293b; color: #ffffff; padding: 1.75rem; text-align: center; }
+        main { max-width: 960px; margin: 2rem auto; padding: 0 1rem; }
+        section { background: #ffffff; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06); }
+        .control-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; margin-bottom: 1rem; }
+        input { padding: 0.6rem 0.8rem; border: 1px solid #cbd5e1; border-radius: 7px; font-size: 0.92rem; width: 100%; }
+        .btn-row { display: flex; flex-wrap: wrap; gap: 0.65rem; }
+        button { border: none; padding: 0.6rem 1rem; border-radius: 7px; color: #ffffff; cursor: pointer; font-size: 0.9rem; }
+        #addPostBtn { background: #2563eb; }
+        #prependFeaturedBtn { background: #0f766e; }
+        #removeLastBtn { background: #dc2626; }
+        #addTagBtn { background: #7c3aed; }
+        #highlightKeywordBtn { background: #d97706; }
+        #blogList { display: flex; flex-direction: column; gap: 1rem; }
+        .blog-post { border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; background: #f8fafc; transition: background-color 0.25s ease, border-color 0.25s ease; }
+        .blog-post.featured { border-left: 5px solid #0f766e; background: #f0fdfa; }
+        .blog-post.keyword-match { background-color: #fef9c3; border-color: #eab308; }
+        .post-title { font-size: 1.15rem; margin: 0.35rem 0; }
+        .post-body { color: #334155; font-size: 0.95rem; margin-bottom: 0.45rem; }
+        .tag-badge { display: inline-block; font-size: 0.78rem; padding: 0.2rem 0.55rem; border-radius: 999px; margin: 0.2rem 0.35rem 0.2rem 0; font-weight: 600; }
+        .tag-before { background: #e0e7ff; color: #3730a3; }
+        .tag-after { background: #ede9fe; color: #6d28d9; }
+        footer { text-align: center; padding: 1.5rem; color: #64748b; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dynamic Blog Posts Admin Panel</h1>
+        <p>Append new posts, prepend featured stories, delete posts, insert tags with .before()/.after(), and highlight keyword matches.</p>
+    </header>
+    <main>
+        <section aria-label="Blog Admin Controls">
+            <h2>Post Management Controls</h2>
+            <div class="control-grid">
+                <input type="text" id="postTitleInput" placeholder="Post title (optional for quick add)">
+                <input type="text" id="postContentInput" placeholder="Post content (optional for quick add)">
+                <input type="text" id="tagInput" placeholder="Tag label (e.g., jQuery)">
+                <input type="text" id="keywordInput" placeholder="Keyword to highlight (e.g., JavaScript)">
+            </div>
+            <div class="btn-row">
+                <button id="addPostBtn" type="button">Add New Post</button>
+                <button id="prependFeaturedBtn" type="button">Prepend Featured Post</button>
+                <button id="removeLastBtn" type="button">Remove Last Post</button>
+                <button id="addTagBtn" type="button">Add Tags (.before / .after)</button>
+                <button id="highlightKeywordBtn" type="button">Highlight Keyword Posts</button>
+            </div>
+        </section>
+
+        <section aria-label="Published Blog Posts">
+            <h2>Published Posts</h2>
+            <div id="blogList">
+                <article class="blog-post">
+                    <h3 class="post-title">Getting Started with Modern JavaScript</h3>
+                    <p class="post-body">Explore ES6 modules, arrow functions, promises, and async workflows for clean frontend code.</p>
+                </article>
+                <article class="blog-post">
+                    <h3 class="post-title">Mastering DOM Manipulation with jQuery</h3>
+                    <p class="post-body">Learn how selectors, chaining, and event delegation speed up interactive web development.</p>
+                </article>
+                <article class="blog-post">
+                    <h3 class="post-title">Designing Responsive Layouts with CSS Grid</h3>
+                    <p class="post-body">Build flexible two-dimensional layouts that adapt smoothly across mobile and desktop screens.</p>
+                </article>
+                <article class="blog-post">
+                    <h3 class="post-title">Git &amp; GitHub Workflows for Developers</h3>
+                    <p class="post-body">Collaborate effectively using feature branches, pull requests, and clean commit histories.</p>
+                </article>
+                <article class="blog-post">
+                    <h3 class="post-title">Optimizing Web Performance &amp; Accessibility</h3>
+                    <p class="post-body">Use semantic HTML5 landmarks, lazy loading, and JavaScript optimization for fast pages.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Dynamic Blog Posts Demo</p>
+    </footer>
+    <script src="Dynamic Blog Posts.js"></script>
+</body>
+</html>

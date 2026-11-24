@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-JQuery Widgets</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f1f5f9; color: #0f172a; }
+        header { background: #0f172a; color: #ffffff; padding: 1.75rem; text-align: center; }
+        .version-bar { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 0.85rem; }
+        .version-pill { background: #1e293b; border: 1px solid #475569; padding: 0.35rem 0.85rem; border-radius: 999px; font-size: 0.88rem; }
+        main { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
+        section { background: #ffffff; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08); }
+        h2 { margin-bottom: 1rem; font-size: 1.2rem; }
+        .carousel-box { position: relative; border-radius: 10px; overflow: hidden; background: #1d4ed8; color: #ffffff; padding: 2rem; text-align: center; min-height: 130px; }
+        .slide { display: none; font-size: 1.15rem; font-weight: 600; }
+        .slide.current { display: block; }
+        .carousel-controls { margin-top: 1rem; display: flex; justify-content: center; gap: 0.75rem; }
+        button { border: none; padding: 0.55rem 1rem; border-radius: 7px; background: #2563eb; color: #ffffff; cursor: pointer; font-size: 0.9rem; }
+        button:hover { background: #1d4ed8; }
+        .widget-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
+        .widget-card { background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 10px; padding: 1.15rem; cursor: pointer; transition: all 0.2s ease; }
+        .widget-card.active-widget { background: #dbeafe; border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2); }
+        .widget-card h3 { font-size: 1rem; margin-bottom: 0.35rem; }
+        .widget-card p { font-size: 0.9rem; color: #475569; margin-bottom: 0.6rem; }
+        .notify-btn { background: #0f766e; font-size: 0.82rem; padding: 0.4rem 0.75rem; }
+        .notify-btn:hover { background: #115e59; }
+        #customTooltip { display: none; position: fixed; z-index: 1000; background: #0f172a; color: #ffffff; padding: 0.45rem 0.75rem; border-radius: 6px; font-size: 0.82rem; pointer-events: none; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); }
+        #modalOverlay { display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.6); z-index: 2000; align-items: center; justify-content: center; }
+        .modal-dialog { background: #ffffff; border-radius: 12px; max-width: 440px; width: 90%; padding: 1.5rem; box-shadow: 0 12px 28px rgba(15, 23, 42, 0.25); }
+        .modal-dialog h3 { margin-bottom: 0.6rem; }
+        .modal-dialog p { color: #334155; margin-bottom: 1.25rem; }
+        #closeModalBtn { background: #dc2626; }
+        footer { text-align: center; padding: 1.5rem; color: #64748b; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Multi-jQuery Dashboard Widgets</h1>
+        <p>Running two independent jQuery versions side by side using jQuery.noConflict().</p>
+        <div class="version-bar">
+            <span class="version-pill">Carousel &amp; Active Widget: jQuery <strong id="v1Label"></strong></span>
+            <span class="version-pill">Modals &amp; Tooltips: jQuery <strong id="v2Label"></strong></span>
+        </div>
+    </header>
+    <main>
+        <section aria-label="Carousel Widget">
+            <h2>Announcement Carousel (Powered by jQuery Version 1)</h2>
+            <div class="carousel-box">
+                <article class="slide current">Slide 1: System uptime reached 99.98% across all clusters this month.</article>
+                <article class="slide">Slide 2: New API v4 analytics endpoints are now live in production.</article>
+                <article class="slide">Slide 3: Weekly deployment window scheduled for Sunday at 02:00 UTC.</article>
+                <article class="slide">Slide 4: Real-time billing alerts added to the finance dashboard.</article>
+                <article class="slide">Slide 5: Security audit completed with zero critical findings.</article>
+            </div>
+            <div class="carousel-controls">
+                <button id="prevSlideBtn" type="button">Previous Slide</button>
+                <button id="nextSlideBtn" type="button">Next Slide</button>
+            </div>
+        </section>
+
+        <section aria-label="Interactive Dashboard Widgets">
+            <h2>Dashboard Widgets (Click to Highlight with v1, Hover for Tooltip &amp; Open Modal with v2)</h2>
+            <div class="widget-grid">
+                <article class="widget-card active-widget" data-tooltip="Active users connected in the last 15 minutes" data-modal-title="Traffic Notification" data-modal-body="Live traffic increased by 18% compared to yesterday's peak hour.">
+                    <h3>Live Traffic</h3>
+                    <p>1,428 active users</p>
+                    <button class="notify-btn" type="button">Open Notification</button>
+                </article>
+                <article class="widget-card" data-tooltip="Orders processed since midnight UTC" data-modal-title="Orders Notification" data-modal-body="312 orders completed today with an average fulfillment time of 4 minutes.">
+                    <h3>Daily Orders</h3>
+                    <p>312 completed</p>
+                    <button class="notify-btn" type="button">Open Notification</button>
+                </article>
+                <article class="widget-card" data-tooltip="Average API latency across regional nodes" data-modal-title="Latency Notification" data-modal-body="Median API response time is steady at 84 ms across all edge servers.">
+                    <h3>API Latency</h3>
+                    <p>84 ms average</p>
+                    <button class="notify-btn" type="button">Open Notification</button>
+                </article>
+                <article class="widget-card" data-tooltip="Open customer support tickets requiring review" data-modal-title="Support Notification" data-modal-body="14 support tickets remain open; 92% of tickets were resolved within SLA.">
+                    <h3>Support Queue</h3>
+                    <p>14 open tickets</p>
+                    <button class="notify-btn" type="button">Open Notification</button>
+                </article>
+                <article class="widget-card" data-tooltip="Current cloud database storage utilization" data-modal-title="Storage Notification" data-modal-body="Primary database cluster is at 62% capacity with automatic scaling enabled.">
+                    <h3>Cloud Storage</h3>
+                    <p>62% utilized</p>
+                    <button class="notify-btn" type="button">Open Notification</button>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <div id="customTooltip" role="tooltip"></div>
+
+    <div id="modalOverlay" role="dialog" aria-modal="true">
+        <div class="modal-dialog">
+            <h3 id="modalTitle">Notification</h3>
+            <p id="modalBody"></p>
+            <button id="closeModalBtn" type="button">Close</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>Multi-JQuery Widgets Demo</p>
+    </footer>
+    <script src="Multi-JQuery Widgets.js"></script>
+</body>
+</html>

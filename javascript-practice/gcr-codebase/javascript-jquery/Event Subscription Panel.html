@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Subscription Panel</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8fafc; color: #0f172a; }
+        header { background: #1e293b; color: #ffffff; padding: 1.75rem; text-align: center; }
+        main { max-width: 860px; margin: 2rem auto; padding: 0 1rem; }
+        section { background: #ffffff; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06); }
+        #statusArea { margin-bottom: 1rem; }
+        .status-msg { background: #dcfce7; color: #166534; border: 1px solid #86efac; padding: 0.75rem 1rem; border-radius: 8px; margin-bottom: 0.5rem; font-weight: 500; }
+        .add-form { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+        .add-form input { flex: 1; min-width: 220px; padding: 0.65rem 0.85rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; }
+        button { border: none; padding: 0.55rem 0.95rem; border-radius: 7px; cursor: pointer; font-size: 0.88rem; color: #ffffff; }
+        #addTopicBtn { background: #2563eb; }
+        .subscribe-btn { background: #16a34a; }
+        .unsubscribe-btn { background: #d97706; }
+        .remove-btn { background: #dc2626; }
+        .topic-list { display: flex; flex-direction: column; gap: 0.85rem; margin-top: 1rem; }
+        .topic-item { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; padding: 1rem; border: 1px solid #e2e8f0; border-radius: 10px; background: #f8fafc; }
+        .topic-info h3 { font-size: 1.05rem; margin-bottom: 0.2rem; }
+        .notif-badge { display: inline-block; font-size: 0.8rem; padding: 0.2rem 0.6rem; border-radius: 999px; font-weight: 600; }
+        .notif-on { background: #dcfce7; color: #166534; }
+        .notif-off { background: #e2e8f0; color: #475569; }
+        .topic-actions { display: flex; gap: 0.5rem; }
+        footer { text-align: center; padding: 1.5rem; color: #64748b; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Event Subscription Panel</h1>
+        <p>Subscribe or unsubscribe from topics, add new event feeds dynamically, or detach and remove subscriptions.</p>
+    </header>
+    <main>
+        <div id="statusArea" aria-live="polite"></div>
+
+        <section aria-label="Add Subscription Topic">
+            <h2>Add New Subscription Topic</h2>
+            <form id="addTopicForm" class="add-form">
+                <input type="text" id="newTopicInput" placeholder="Enter a new event topic (e.g., AI Workshops)">
+                <button id="addTopicBtn" type="submit">Add Topic</button>
+            </form>
+        </section>
+
+        <section aria-label="Subscription Topics">
+            <h2>Available Event Topics</h2>
+            <div id="topicList" class="topic-list">
+                <article class="topic-item">
+                    <div class="topic-info">
+                        <h3>Web Development Webinars</h3>
+                        <span class="notif-badge notif-off">Notifications Disabled</span>
+                    </div>
+                    <div class="topic-actions">
+                        <button class="subscribe-btn" type="button">Subscribe</button>
+                        <button class="unsubscribe-btn" type="button">Unsubscribe</button>
+                        <button class="remove-btn" type="button">Remove</button>
+                    </div>
+                </article>
+                <article class="topic-item">
+                    <div class="topic-info">
+                        <h3>Campus Placement Drives</h3>
+                        <span class="notif-badge notif-on">Notifications Enabled</span>
+                    </div>
+                    <div class="topic-actions">
+                        <button class="subscribe-btn" type="button">Subscribe</button>
+                        <button class="unsubscribe-btn" type="button">Unsubscribe</button>
+                        <button class="remove-btn" type="button">Remove</button>
+                    </div>
+                </article>
+                <article class="topic-item">
+                    <div class="topic-info">
+                        <h3>Coding Hackathon Alerts</h3>
+                        <span class="notif-badge notif-off">Notifications Disabled</span>
+                    </div>
+                    <div class="topic-actions">
+                        <button class="subscribe-btn" type="button">Subscribe</button>
+                        <button class="unsubscribe-btn" type="button">Unsubscribe</button>
+                        <button class="remove-btn" type="button">Remove</button>
+                    </div>
+                </article>
+                <article class="topic-item">
+                    <div class="topic-info">
+                        <h3>Open Source Meetups</h3>
+                        <span class="notif-badge notif-off">Notifications Disabled</span>
+                    </div>
+                    <div class="topic-actions">
+                        <button class="subscribe-btn" type="button">Subscribe</button>
+                        <button class="unsubscribe-btn" type="button">Unsubscribe</button>
+                        <button class="remove-btn" type="button">Remove</button>
+                    </div>
+                </article>
+                <article class="topic-item">
+                    <div class="topic-info">
+                        <h3>Cloud Architecture Seminars</h3>
+                        <span class="notif-badge notif-off">Notifications Disabled</span>
+                    </div>
+                    <div class="topic-actions">
+                        <button class="subscribe-btn" type="button">Subscribe</button>
+                        <button class="unsubscribe-btn" type="button">Unsubscribe</button>
+                        <button class="remove-btn" type="button">Remove</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Event Subscription Panel Demo</p>
+    </footer>
+    <script src="Event Subscription Panel.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Highlight</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8fafc; color: #0f172a; }
+        header { background: #0f172a; color: #ffffff; padding: 1.75rem; text-align: center; }
+        main { max-width: 1050px; margin: 2rem auto; padding: 0 1rem; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+        .product-card { background: #ffffff; border: 2px solid #e2e8f0; border-radius: 12px; padding: 1.25rem; cursor: pointer; transition: transform 0.2s ease, background-color 0.25s ease, box-shadow 0.2s ease; position: relative; }
+        .product-card:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(15, 23, 42, 0.1); }
+        .product-card.highlighted { background-color: #dbeafe; border-color: #2563eb; }
+        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem; }
+        .card-header h2 { font-size: 1.15rem; }
+        .favorite-btn { background: none; border: 1px solid #cbd5e1; border-radius: 50%; width: 36px; height: 36px; font-size: 1.2rem; cursor: pointer; color: #94a3b8; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; }
+        .favorite-btn.selected { color: #dc2626; background: #fee2e2; border-color: #dc2626; transform: scale(1.1); }
+        .price { font-size: 1.1rem; font-weight: 700; color: #0f766e; margin-bottom: 0.4rem; }
+        .badge { display: inline-block; font-size: 0.78rem; padding: 0.2rem 0.55rem; border-radius: 999px; margin-bottom: 0.5rem; font-weight: 600; }
+        .badge-stock { background: #dcfce7; color: #166534; }
+        .badge-out { background: #fee2e2; color: #991b1b; }
+        .product-details { display: none; margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px dashed #cbd5e1; font-size: 0.9rem; color: #334155; }
+        footer { text-align: center; padding: 1.5rem; color: #64748b; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Featured Tech Store</h1>
+        <p>Click any product to highlight, hover for full specs, and click the heart to save favorites.</p>
+    </header>
+    <main>
+        <section class="product-grid" aria-label="Product Catalog">
+            <article class="product-card" data-discount="20" data-stock="in">
+                <div class="card-header">
+                    <h2>Wireless Earbuds Pro</h2>
+                    <button class="favorite-btn" type="button" aria-label="Toggle Favorite">&#9829;</button>
+                </div>
+                <p class="price">$79.99</p>
+                <span class="badge badge-stock">In Stock</span>
+                <div class="product-details">
+                    <p>Active Noise Cancellation, 36-hour battery life, dual-device pairing, and IPX5 water resistance.</p>
+                </div>
+            </article>
+            <article class="product-card" data-stock="in">
+                <div class="card-header">
+                    <h2>Mechanical Keyboard</h2>
+                    <button class="favorite-btn" type="button" aria-label="Toggle Favorite">&#9829;</button>
+                </div>
+                <p class="price">$119.00</p>
+                <span class="badge badge-stock">In Stock</span>
+                <div class="product-details">
+                    <p>Hot-swappable tactile switches, aluminum frame, and customizable white LED backlight.</p>
+                </div>
+            </article>
+            <article class="product-card" data-discount="15" data-stock="out">
+                <div class="card-header">
+                    <h2>4K UltraWide Monitor</h2>
+                    <button class="favorite-btn" type="button" aria-label="Toggle Favorite">&#9829;</button>
+                </div>
+                <p class="price">$389.00</p>
+                <span class="badge badge-out">Out of Stock</span>
+                <div class="product-details">
+                    <p>34-inch IPS panel, 144Hz refresh rate, USB-C 65W power delivery, and HDR10 support.</p>
+                </div>
+            </article>
+            <article class="product-card" data-stock="in">
+                <div class="card-header">
+                    <h2>Ergonomic Wireless Mouse</h2>
+                    <button class="favorite-btn" type="button" aria-label="Toggle Favorite">&#9829;</button>
+                </div>
+                <p class="price">$54.50</p>
+                <span class="badge badge-stock">In Stock</span>
+                <div class="product-details">
+                    <p>Precision 4000 DPI sensor, silent clicks, rechargeable USB-C battery, and multi-OS support.</p>
+                </div>
+            </article>
+            <article class="product-card" data-discount="30" data-stock="in">
+                <div class="card-header">
+                    <h2>Portable SSD 1TB</h2>
+                    <button class="favorite-btn" type="button" aria-label="Toggle Favorite">&#9829;</button>
+                </div>
+                <p class="price">$89.99</p>
+                <span class="badge badge-stock">In Stock</span>
+                <div class="product-details">
+                    <p>NVMe transfer speeds up to 1050 MB/s, shock-resistant aluminum casing, and hardware encryption.</p>
+                </div>
+            </article>
+            <article class="product-card" data-stock="out">
+                <div class="card-header">
+                    <h2>USB-C Docking Station</h2>
+                    <button class="favorite-btn" type="button" aria-label="Toggle Favorite">&#9829;</button>
+                </div>
+                <p class="price">$69.00</p>
+                <span class="badge badge-out">Out of Stock</span>
+                <div class="product-details">
+                    <p>11-in-1 hub with Dual HDMI, Gigabit Ethernet, SD card reader, and 100W passthrough charging.</p>
+                </div>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>Product Highlight Demo</p>
+    </footer>
+    <script src="Product Highlight.js"></script>
+</body>
+</html>

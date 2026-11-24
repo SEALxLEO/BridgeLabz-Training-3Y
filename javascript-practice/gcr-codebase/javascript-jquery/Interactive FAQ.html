@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive FAQ</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f1f5f9; color: #1e293b; }
+        header { background: #1e293b; color: #ffffff; padding: 2rem 1rem; text-align: center; }
+        main { max-width: 820px; margin: 2rem auto; padding: 0 1rem; }
+        .faq-item { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; margin-bottom: 1rem; overflow: hidden; box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05); }
+        .faq-question { padding: 1.15rem 1.25rem; font-size: 1.05rem; font-weight: 600; cursor: pointer; background-color: #ffffff; transition: background-color 0.2s ease, color 0.2s ease; user-select: none; }
+        .faq-answer { display: none; padding: 1rem 1.25rem 1.25rem; border-top: 1px solid #e2e8f0; background: #f8fafc; }
+        .faq-answer p { margin-bottom: 0.75rem; color: #334155; }
+        .answer-input { width: 100%; padding: 0.6rem 0.75rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.92rem; }
+        .answer-input:focus { outline: none; border-color: #2563eb; }
+        footer { text-align: center; padding: 1.5rem; color: #64748b; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Frequently Asked Questions</h1>
+        <p>Click a question to toggle its answer, double-click any question to collapse all answers, or click an input box to highlight its question.</p>
+    </header>
+    <main>
+        <section aria-label="FAQ List">
+            <article class="faq-item">
+                <h2 class="faq-question">1. How do I create a student account on the learning portal?</h2>
+                <div class="faq-answer">
+                    <p>Use your university email address on the Sign Up page and verify your account via the confirmation link sent to your inbox.</p>
+                    <input type="text" class="answer-input" placeholder="Add a follow-up question or note...">
+                </div>
+            </article>
+            <article class="faq-item">
+                <h2 class="faq-question">2. Can I access course materials offline?</h2>
+                <div class="faq-answer">
+                    <p>Yes, lecture slides and downloadable assignments can be saved locally for offline reading directly from each module.</p>
+                    <input type="text" class="answer-input" placeholder="Add a follow-up question or note...">
+                </div>
+            </article>
+            <article class="faq-item">
+                <h2 class="faq-question">3. How are assignments graded and returned?</h2>
+                <div class="faq-answer">
+                    <p>Instructors grade submissions within 5 business days and publish scores along with rubric feedback inside the Grades tab.</p>
+                    <input type="text" class="answer-input" placeholder="Add a follow-up question or note...">
+                </div>
+            </article>
+            <article class="faq-item">
+                <h2 class="faq-question">4. What should I do if I forget my portal password?</h2>
+                <div class="faq-answer">
+                    <p>Click the Forgot Password link on the login screen to receive a time-limited reset link at your registered email address.</p>
+                    <input type="text" class="answer-input" placeholder="Add a follow-up question or note...">
+                </div>
+            </article>
+            <article class="faq-item">
+                <h2 class="faq-question">5. How do I contact technical support for urgent issues?</h2>
+                <div class="faq-answer">
+                    <p>Submit a helpdesk ticket through the Support tab or reach out during live chat hours from Monday to Saturday, 9 AM to 6 PM.</p>
+                    <input type="text" class="answer-input" placeholder="Add a follow-up question or note...">
+                </div>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>Interactive FAQ Demo</p>
+    </footer>
+    <script src="Interactive FAQ.js"></script>
+</body>
+</html>
