@@ -1,0 +1,98 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Devang Kumar",
+      "email": "devang@example.com"
+    },
+    {
+      "id": "2",
+      "name": "Riya Malhotra",
+      "email": "riya@example.com"
+    },
+    {
+      "id": "3",
+      "name": "Aditya Joshi",
+      "email": "aditya@example.com"
+    },
+    {
+      "id": "4",
+      "name": "Neha Kapoor",
+      "email": "neha@example.com"
+    },
+    {
+      "id": "5",
+      "name": "Vikram Nair",
+      "email": "vikram@example.com"
+    },
+    {
+      "id": "6",
+      "name": "Simran Kaur",
+      "email": "simran@example.com"
+    }
+  ],
+  "orders": [
+    {
+      "id": "101",
+      "userId": "1",
+      "amount": 2499
+    },
+    {
+      "id": "102",
+      "userId": "2",
+      "amount": 1850
+    },
+    {
+      "id": "103",
+      "userId": "3",
+      "amount": 4200
+    },
+    {
+      "id": "104",
+      "userId": "4",
+      "amount": 999
+    },
+    {
+      "id": "105",
+      "userId": "5",
+      "amount": 3150
+    }
+  ],
+  "products": [
+    {
+      "id": "201",
+      "name": "Bluetooth Speaker",
+      "price": 1999
+    },
+    {
+      "id": "202",
+      "name": "Smart Watch",
+      "price": 3499
+    },
+    {
+      "id": "203",
+      "name": "Mechanical Keyboard",
+      "price": 2999
+    },
+    {
+      "id": "204",
+      "name": "Laptop Sleeve",
+      "price": 799
+    },
+    {
+      "id": "205",
+      "name": "USB Hub",
+      "price": 1299
+    },
+    {
+      "id": "206",
+      "name": "Desk Lamp",
+      "price": 1499
+    },
+    {
+      "id": "207",
+      "name": "Wireless Mouse",
+      "price": 1099
+    }
+  ]
+}

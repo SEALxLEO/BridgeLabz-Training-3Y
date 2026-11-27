@@ -1,0 +1,34 @@
+{
+  "employees": [
+    {
+      "id": "1",
+      "name": "Aarav Sharma",
+      "status": "active"
+    },
+    {
+      "id": "2",
+      "name": "Priya Verma",
+      "status": "inactive"
+    },
+    {
+      "id": "3",
+      "name": "Rohan Gupta",
+      "status": "active"
+    },
+    {
+      "id": "4",
+      "name": "Sneha Patel",
+      "status": "active"
+    },
+    {
+      "id": "5",
+      "name": "Karan Mehta",
+      "status": "inactive"
+    },
+    {
+      "id": "6",
+      "name": "Ananya Singh",
+      "status": "active"
+    }
+  ]
+}

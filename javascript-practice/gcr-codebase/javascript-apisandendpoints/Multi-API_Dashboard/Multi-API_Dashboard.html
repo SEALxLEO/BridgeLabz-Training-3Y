@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-API Dashboard</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f3f4f6;
+      color: #111827;
+      padding: 32px 16px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 26px;
+      text-align: center;
+    }
+
+    #warningBanner {
+      display: none;
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fcd34d;
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    .label {
+      font-size: 15px;
+      color: #6b7280;
+      margin-bottom: 12px;
+    }
+
+    .value {
+      font-size: 38px;
+      font-weight: bold;
+      color: #1d4ed8;
+      min-height: 46px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .skeleton {
+      width: 90px;
+      height: 38px;
+      border-radius: 8px;
+      background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.2s infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: 200% 0;
+      }
+
+      100% {
+        background-position: -200% 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Multi-API Dashboard</h1>
+    <div id="warningBanner">Some data could not be loaded.</div>
+    <div class="grid">
+      <div class="card">
+        <div class="label">Total Users</div>
+        <div class="value" id="totalUsers">
+          <div class="skeleton"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="label">Total Orders</div>
+        <div class="value" id="totalOrders">
+          <div class="skeleton"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="label">Total Products</div>
+        <div class="value" id="totalProducts">
+          <div class="skeleton"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const BASE_URL = "http://localhost:3004";
+
+    function fetchResource(endpoint) {
+      return fetch(BASE_URL + endpoint)
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error("HTTP error " + response.status);
+          }
+          return response.json();
+        })
+        .then(function (data) {
+          return { ok: true, count: Array.isArray(data) ? data.length : 0 };
+        })
+        .catch(function () {
+          return { ok: false, count: null };
+        });
+    }
+
+    async function loadDashboard() {
+      const endpoints = ["/users", "/orders", "/products"];
+      const [usersResult, ordersResult, productsResult] = await Promise.all(
+        endpoints.map(function (endpoint) {
+          return fetchResource(endpoint);
+        })
+      );
+
+      const hasFailure = !usersResult.ok || !ordersResult.ok || !productsResult.ok;
+      if (hasFailure) {
+        document.getElementById("warningBanner").style.display = "block";
+      }
+
+      document.getElementById("totalUsers").textContent = usersResult.ok ? usersResult.count : "N/A";
+      document.getElementById("totalOrders").textContent = ordersResult.ok ? ordersResult.count : "N/A";
+      document.getElementById("totalProducts").textContent = productsResult.ok ? productsResult.count : "N/A";
+    }
+
+    loadDashboard();
+  </script>
+</body>
+
+</html>

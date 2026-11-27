@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Amit Kumar",
+      "email": "amit@gmail.com",
+      "password": "Password@123"
+    },
+    {
+      "id": "2",
+      "name": "Neha Sharma",
+      "email": "neha@gmail.com",
+      "password": "Password@234"
+    },
+    {
+      "id": "3",
+      "name": "Rahul Verma",
+      "email": "rahul@gmail.com",
+      "password": "Password@345"
+    },
+    {
+      "id": "4",
+      "name": "Pooja Singh",
+      "email": "pooja@gmail.com",
+      "password": "Password@456"
+    },
+    {
+      "id": "5",
+      "name": "Kunal Joshi",
+      "email": "kunal@gmail.com",
+      "password": "Password@567"
+    }
+  ]
+}

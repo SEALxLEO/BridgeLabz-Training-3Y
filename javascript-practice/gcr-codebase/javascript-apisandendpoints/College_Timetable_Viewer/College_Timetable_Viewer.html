@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Timetable Viewer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f3f4f6;
+      color: #111827;
+      padding: 32px 16px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    select {
+      padding: 10px 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      font-size: 14px;
+      background: #ffffff;
+    }
+
+    .class-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .class-card {
+      border: 1px solid #e5e7eb;
+      border-left: 4px solid #2563eb;
+      border-radius: 8px;
+      padding: 14px 16px;
+      background: #f9fafb;
+    }
+
+    .subject {
+      font-size: 17px;
+      font-weight: bold;
+      margin-bottom: 6px;
+      color: #111827;
+    }
+
+    .meta {
+      font-size: 14px;
+      color: #4b5563;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .empty-message {
+      text-align: center;
+      padding: 32px;
+      color: #6b7280;
+      font-size: 16px;
+      background: #f9fafb;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>College Timetable Viewer</h1>
+      <select id="daySelect">
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+        <option value="Saturday">Saturday</option>
+        <option value="Sunday">Sunday</option>
+      </select>
+    </div>
+    <div id="timetableContainer" class="class-list"></div>
+  </div>
+
+  <script>
+    const API_URL = "http://localhost:3005/timetable";
+    const daySelect = document.getElementById("daySelect");
+    const container = document.getElementById("timetableContainer");
+
+    async function fetchTimetable(day) {
+      container.innerHTML = '<div class="empty-message">Loading timetable...</div>';
+
+      try {
+        const response = await fetch(API_URL + "?day=" + encodeURIComponent(day));
+        if (!response.ok) {
+          throw new Error("Request failed");
+        }
+
+        const classes = await response.json();
+        container.innerHTML = "";
+
+        if (!classes || classes.length === 0) {
+          container.innerHTML = '<div class="empty-message">No classes today.</div>';
+          return;
+        }
+
+        classes.forEach(function (item) {
+          const card = document.createElement("div");
+          card.className = "class-card";
+          card.innerHTML = `
+            <div class="subject">${item.subject}</div>
+            <div class="meta">
+              <span>Faculty: ${item.faculty}</span>
+              <span>Time: ${item.time}</span>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      } catch (error) {
+        container.innerHTML = '<div class="empty-message">Unable to load timetable. Ensure JSON Server is running on port 3005.</div>';
+      }
+    }
+
+    daySelect.addEventListener("change", function () {
+      fetchTimetable(daySelect.value);
+    });
+
+    fetchTimetable(daySelect.value);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+{
+  "timetable": [
+    {
+      "id": "1",
+      "day": "Monday",
+      "subject": "Design and Analysis of Algorithms",
+      "faculty": "Dr. Rajesh Kumar",
+      "time": "09:00 AM - 10:00 AM"
+    },
+    {
+      "id": "2",
+      "day": "Monday",
+      "subject": "Full Stack Web Development",
+      "faculty": "Prof. Meena Sharma",
+      "time": "10:15 AM - 11:15 AM"
+    },
+    {
+      "id": "3",
+      "day": "Tuesday",
+      "subject": "Database Management Systems",
+      "faculty": "Dr. Vivek Mishra",
+      "time": "09:00 AM - 10:00 AM"
+    },
+    {
+      "id": "4",
+      "day": "Tuesday",
+      "subject": "Operating Systems",
+      "faculty": "Prof. Anjali Tiwari",
+      "time": "11:30 AM - 12:30 PM"
+    },
+    {
+      "id": "5",
+      "day": "Wednesday",
+      "subject": "Computer Networks",
+      "faculty": "Dr. Sanjay Gupta",
+      "time": "10:15 AM - 11:15 AM"
+    },
+    {
+      "id": "6",
+      "day": "Thursday",
+      "subject": "Software Engineering",
+      "faculty": "Prof. Nitin Verma",
+      "time": "02:00 PM - 03:00 PM"
+    },
+    {
+      "id": "7",
+      "day": "Friday",
+      "subject": "Java Programming Lab",
+      "faculty": "Prof. Pooja Singh",
+      "time": "01:00 PM - 03:00 PM"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Complete REST API assignment",
+      "priority": "High",
+      "completed": false
+    },
+    {
+      "id": "2",
+      "title": "Review Java DSA notes",
+      "priority": "Medium",
+      "completed": true
+    },
+    {
+      "id": "3",
+      "title": "Organize project folder",
+      "priority": "Low",
+      "completed": false
+    },
+    {
+      "id": "4",
+      "title": "Fix database schema bug",
+      "priority": "High",
+      "completed": true
+    },
+    {
+      "id": "5",
+      "title": "Prepare presentation slides",
+      "priority": "Medium",
+      "completed": false
+    },
+    {
+      "id": "6",
+      "title": "Update README documentation",
+      "priority": "Low",
+      "completed": true
+    }
+  ]
+}
